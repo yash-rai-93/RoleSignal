@@ -88,7 +88,7 @@ function JobTitlesTable({
           {startPostIndex} to {endPostIndex}
         </strong>{" "}
         of
-        <strong> {totalJobTitles}</strong> companies
+        <strong> {totalJobTitles}</strong> titles
       </div>
       {totalJobTitles > recordsPerPage ? (
         <TablePagination
