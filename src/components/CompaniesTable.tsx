@@ -110,7 +110,7 @@ function CompaniesTable({
           {startPostIndex} to {endPostIndex}
         </strong>{" "}
         of
-        <strong> {totalCompanies}</strong> jobs
+        <strong> {totalCompanies}</strong> companies
       </div>
       {totalCompanies > recordsPerPage ? (
         <TablePagination
