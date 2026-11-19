@@ -2,7 +2,7 @@
 set -e
 
 # Stop a still-SQLite instance before anything touches the database: this
-# release has no import. 1.2.0 writes the sentinel after a finished import.
+# distribution does not include a SQLite importer.
 SQLITE_LEGACY_PATH="${SQLITE_LEGACY_PATH:-/data/dev.db}"
 if [ -e "$SQLITE_LEGACY_PATH" ] && [ ! -e "$SQLITE_LEGACY_PATH.imported-at" ]; then
   cat <<EOF
@@ -11,14 +11,14 @@ This release cannot import a SQLite database. Nothing has been modified.
 
 Already using this instance on Postgres, or don't need the old data?
   Create an empty file named dev.db.imported-at next to dev.db
-  (jobsyncdb/data/ on the host), then restart.
+  (rolesignaldb/data/ on the host), then restart.
 
-Still on SQLite and want to keep your data? Run 1.2.0 once to import it:
-  docker compose -f docker-compose.yml -f docker-compose.sqlite-import.yml up -d
-  Wait until the app loads, then run ./deploy.sh
-  (or docker compose pull && docker compose up -d).
+Still on SQLite and want to keep your data?
+  Keep a backup and finish migration using your existing installation's
+  migration tooling before switching to RoleSignal. This repository does
+  not publish a historical SQLite import image.
 
-See https://github.com/Gsync/jobsync/wiki/Upgrading-To-Postgres
+See https://github.com/yash-rai-93/RoleSignal/blob/main/wiki/upgrading-to-postgres.md
 EOF
   # Idle, or the restart policy would repeat this until someone stops it
   trap 'exit 0' TERM INT

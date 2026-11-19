@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# JobSync Deployment Script
+# RoleSignal Deployment Script
 # Usage: ./deploy.sh [branch-name]
 # Example: ./deploy.sh main
 # Example: ./deploy.sh develop
@@ -18,7 +18,7 @@ DEFAULT_BRANCH="main"
 BRANCH="${1:-$DEFAULT_BRANCH}"
 
 echo -e "${YELLOW}========================================${NC}"
-echo -e "${YELLOW}JobSync Deployment Script${NC}"
+echo -e "${YELLOW}RoleSignal Deployment Script${NC}"
 echo -e "${YELLOW}========================================${NC}"
 echo ""
 
@@ -74,9 +74,9 @@ git pull origin "$BRANCH"
 echo -e "${GREEN}[4/5]${NC} Stopping existing containers..."
 $COMPOSE_CMD down
 
-# Pull latest images and start containers
-echo -e "${GREEN}[5/5]${NC} Pulling latest images and starting containers..."
-$COMPOSE_CMD pull
+# Build RoleSignal from the updated source and start containers
+echo -e "${GREEN}[5/5]${NC} Building RoleSignal and starting containers..."
+$COMPOSE_CMD build app
 $COMPOSE_CMD up -d --force-recreate
 
 # Poll the app until it actually responds, so the success message below only

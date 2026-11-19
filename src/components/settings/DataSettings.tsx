@@ -241,7 +241,7 @@ export default function DataSettings() {
                 <p>
                   Exported{" "}
                   {format(new Date(preflight.manifest.exportedAt), "PPp")} from
-                  JobSync {preflight.manifest.appVersion}
+                  RoleSignal {preflight.manifest.appVersion}
                 </p>
                 <p className="text-muted-foreground">
                   Source account: {preflight.manifest.sourceEmail}

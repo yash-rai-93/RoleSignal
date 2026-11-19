@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.2.1](https://github.com/Gsync/jobsync/compare/v1.2.0...v1.2.1) (2026-11-14)
+## [1.2.1](https://github.com/yash-rai-93/RoleSignal/compare/v1.2.0...v1.2.1) (2026-11-14)
 
 
 ### Breaking Changes
@@ -35,7 +35,7 @@
 
 * Upgraded to AI SDK 7.
 * Upgraded to Next.js 16.
-* Run JobSync on upgraded Node version 24.
+* Run RoleSignal on upgraded Node version 24.
 * Upgrade the database library to Prisma 7, which makes the Docker image smaller and lets the container start without downloading anything.
 * Shrink the Docker image by leaving out the unused image-optimization library.
 * Upgraded the rich-text editor to Tiptap 3.
@@ -43,12 +43,12 @@
 * Upgraded date-fns, react-day-picker, lucide-react, markdown-it, bcryptjs, @hookform/resolvers and unpdf to their latest major versions.
 
 
-## [1.2.0](https://github.com/Gsync/jobsync/compare/v1.1.22...v1.2.0) (2026-10-30)
+## [1.2.0](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.22...v1.2.0) (2026-10-30)
 
 
 ### Breaking Changes
 
-* JobSync now stores its data in Postgres: Docker installs run a bundled Postgres 18 database and copy an existing SQLite database into it on first start, and an external Postgres can be used by setting DATABASE_URL (see the Postgres upgrade guide).
+* RoleSignal now stores its data in Postgres: Docker installs run a bundled Postgres 18 database and copy an existing SQLite database into it on first start, and an external Postgres can be used by setting DATABASE_URL (see the Postgres upgrade guide).
 
 ### Features
 
@@ -73,7 +73,7 @@
 * The Tasks page's Status filter and Group by menu are now one filter button, matching the Jobs page.
 
 
-## [1.1.22](https://github.com/Gsync/jobsync/compare/v1.1.21...v1.1.22) (2026-10-11)
+## [1.1.22](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.21...v1.1.22) (2026-10-11)
 
 
 ### Features
@@ -132,7 +132,7 @@
 * explain automation notifications on the automations help page
 
 
-## [1.1.21](https://github.com/Gsync/jobsync/compare/v1.1.20...v1.1.21) (2026-09-27)
+## [1.1.21](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.20...v1.1.21) (2026-09-27)
 
 
 ### Features
@@ -204,7 +204,7 @@
 * add E2E coverage for stage-to-status and interviewer-to-contacts, add the Job Timeline help page, and fix the greenhouse runner's prisma mock
 
 
-## [1.1.20](https://github.com/Gsync/jobsync/compare/v1.1.19...v1.1.20) (2026-09-14)
+## [1.1.20](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.19...v1.1.20) (2026-09-14)
 
 
 ### Features
@@ -256,7 +256,7 @@
 * split JobDetails into job-details/ with URL-backed tabs
 
 
-## [1.1.19](https://github.com/Gsync/jobsync/compare/v1.1.18...v1.1.19) (2026-09-06)
+## [1.1.19](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.18...v1.1.19) (2026-09-06)
 
 
 ### Features
@@ -296,7 +296,7 @@
 * replace hand-rolled auth guards with requireUser() across 12 action files
 
 
-## [1.1.18](https://github.com/Gsync/jobsync/compare/v1.1.17...v1.1.18) (2026-08-23)
+## [1.1.18](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.17...v1.1.18) (2026-08-23)
 
 
 ### Features
@@ -336,7 +336,7 @@
 * import actions from specific files, reduce file length, make it more readable
 
 
-## [1.1.17](https://github.com/Gsync/jobsync/compare/v1.1.16...v1.1.17) (2026-08-16)
+## [1.1.17](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.16...v1.1.17) (2026-08-16)
 
 
 ### Features
@@ -372,7 +372,7 @@
 *  dedupe no-resumes/pick-a-resume JSX in AgentResultCard renderers
 
 
-## [1.1.16](https://github.com/Gsync/jobsync/compare/v1.1.15...v1.1.16) (2026-08-09)
+## [1.1.16](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.15...v1.1.16) (2026-08-09)
 
 
 ### Features
@@ -475,7 +475,7 @@
 * add functions for handling task descriptions and excerpts
 
 
-## [1.1.15](https://github.com/Gsync/jobsync/compare/v1.1.14...v1.1.15) (2026-07-30)
+## [1.1.15](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.14...v1.1.15) (2026-07-30)
 
 
 ### Features
@@ -570,7 +570,7 @@
 *  add unit tests for API authentication and key resolution
 
 
-## [1.1.14](https://github.com/Gsync/jobsync/compare/v1.1.13...v1.1.14) (2026-07-13)
+## [1.1.14](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.13...v1.1.14) (2026-07-13)
 
 
 ### Features
@@ -605,7 +605,7 @@
 *  extract shared ResponsiveCardHeader and SearchInput components
 
 
-## [1.1.13](https://github.com/Gsync/jobsync/compare/v1.1.12...v1.1.13) (2026-07-06)
+## [1.1.13](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.12...v1.1.13) (2026-07-06)
 
 
 ### Features
@@ -683,7 +683,7 @@
 * update readme
 
 
-## [1.1.12](https://github.com/Gsync/jobsync/compare/v1.1.11...v1.1.12) (2026-06-05)
+## [1.1.12](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.11...v1.1.12) (2026-06-05)
 
 
 ### Features
@@ -710,7 +710,7 @@
 * Optimize performance, reduce unnecessary fetch
 
 
-## [1.1.11](https://github.com/Gsync/jobsync/compare/v1.1.10...v1.1.11) (2026-05-05)
+## [1.1.11](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.10...v1.1.11) (2026-05-05)
 
 
 ### Features
@@ -744,7 +744,7 @@
 * Add unit tests
 
 
-## [1.1.10](https://github.com/Gsync/jobsync/compare/v1.1.9...v1.1.10) (2026-03-31)
+## [1.1.10](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.9...v1.1.10) (2026-03-31)
 
 
 ### Bug Fixes
@@ -763,7 +763,7 @@
 * Address failing unit tests
 
 
-## [1.1.9](https://github.com/Gsync/jobsync/compare/v1.1.8...v1.1.9) (2026-03-30)
+## [1.1.9](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.8...v1.1.9) (2026-03-30)
 
 
 ### Other Changes
@@ -771,23 +771,23 @@
 *  1.1.8
 
 
-## [1.1.8](https://github.com/Gsync/jobsync/compare/v1.1.8...v1.1.8) (2026-03-30)
+## [1.1.8](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.8...v1.1.8) (2026-03-30)
 
 
 
-## [1.1.7](https://github.com/Gsync/jobsync/compare/v1.1.8...v1.1.7) (2026-03-30)
+## [1.1.7](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.8...v1.1.7) (2026-03-30)
 
 
 
-## [1.1.8](https://github.com/Gsync/jobsync/compare/v1.1.7...v1.1.8) (2026-03-30)
+## [1.1.8](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.7...v1.1.8) (2026-03-30)
 
 
 
-## [1.1.7](https://github.com/Gsync/jobsync/compare/v1.1.6...v1.1.7) (2026-03-30)
+## [1.1.7](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.6...v1.1.7) (2026-03-30)
 
 
 
-## [1.1.6](https://github.com/Gsync/jobsync/compare/v1.1.4...v1.1.6) (2026-03-30)
+## [1.1.6](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.4...v1.1.6) (2026-03-30)
 
 
 ### Features
@@ -830,7 +830,7 @@
 * Change docker internal port
 
 
-## [1.1.4](https://github.com/Gsync/jobsync/compare/v1.1.3...v1.1.4) (2026-03-06)
+## [1.1.4](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.3...v1.1.4) (2026-03-06)
 
 
 ### Features
@@ -855,11 +855,11 @@
 *  write unit tests for add note
 
 
-## [1.1.3](https://github.com/Gsync/jobsync/compare/v1.1.2...v1.1.3) (2026-02-28)
+## [1.1.3](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.2...v1.1.3) (2026-02-28)
 
 
 
-## [1.1.2](https://github.com/Gsync/jobsync/compare/v1.1.0...v1.1.2) (2026-02-28)
+## [1.1.2](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.0...v1.1.2) (2026-02-28)
 
 
 ### Bug Fixes
@@ -872,80 +872,80 @@
 *  release 1.1.1
 
 
-## [1.1.1](https://github.com/Gsync/jobsync/compare/v1.1.0...v1.1.1) (2026-02-28)
+## [1.1.1](https://github.com/yash-rai-93/RoleSignal/compare/v1.1.0...v1.1.1) (2026-02-28)
 
 
 ### Bug Fixes
 
-* **ui:** display user email in profile dropdown instead of static text ([2fee6ee](https://github.com/Gsync/jobsync/commit/2fee6eeb8b041db26a20d72f1b24485fec51f030))
-* **ui:** display user email in profile dropdown instead of static text ([bc39aa5](https://github.com/Gsync/jobsync/commit/bc39aa5bbda8dfa91fcb8e404b9cc68c2eec5674))
+* **ui:** display user email in profile dropdown instead of static text ([2fee6ee](https://github.com/yash-rai-93/RoleSignal/commit/51d3fca1303f126292ed5d9687a28467851d52f8))
+* **ui:** display user email in profile dropdown instead of static text ([bc39aa5](https://github.com/yash-rai-93/RoleSignal/commit/907f773d553c610310b4e73e9e6d07b961084057))
 
-## [1.1.0](https://github.com/Gsync/jobsync/compare/v1.0.0...v1.1.0) (2026-02-28)
+## [1.1.0](https://github.com/yash-rai-93/RoleSignal/compare/v1.0.0...v1.1.0) (2026-02-28)
 
 
 ### Features
 
-* add release automation ([6fd8247](https://github.com/Gsync/jobsync/commit/6fd8247f836208d61eddae935c4cbd63fac36cde))
+* add release automation ([6fd8247](https://github.com/yash-rai-93/RoleSignal/commit/6c41b11233492822ee061485aeca04a0113e0f74))
 
 
 ### Bug Fixes
 
-* Add job draft date in job details ([f6c2bb6](https://github.com/Gsync/jobsync/commit/f6c2bb65f14364f1292ecccf66c4f2999ba5cfc6))
-* Admin tab switch ([8c57052](https://github.com/Gsync/jobsync/commit/8c5705297c643a13c9d00da34a45d7d85f785f23))
-* bullet and order styling of editor content ([423b0f4](https://github.com/Gsync/jobsync/commit/423b0f43d0cfff76e1522864bd1b5177773692fb))
-* button hydration error ([d7e97a0](https://github.com/Gsync/jobsync/commit/d7e97a014e2d41ccdb1cd77d6baa0b6975576f4b))
-* Combobox filter issue ([1ab477e](https://github.com/Gsync/jobsync/commit/1ab477eb6e64f0aab7da360fcc936897217583e5))
-* Combobox undefined error ([fdaa9fe](https://github.com/Gsync/jobsync/commit/fdaa9fe72c35695136871a8e92fb5311af52a476))
-* configure release-please to target dev branch ([9ca7db0](https://github.com/Gsync/jobsync/commit/9ca7db003a5fb2d0ef4484a223aa7511eb84c08b))
-* Create company bug when adding experience ([c992077](https://github.com/Gsync/jobsync/commit/c99207744f8f038ad490d10dba581dba8c13d960))
-* DatePicker bug in Safari browser ([0f24106](https://github.com/Gsync/jobsync/commit/0f24106ebe5fabbd65336e2de128a623d3406099))
-* Dialog scroll ([93f8e7d](https://github.com/Gsync/jobsync/commit/93f8e7dbec477b14c924ea0f819283c9a1f142f0))
-* Edit company ([d7a15e2](https://github.com/Gsync/jobsync/commit/d7a15e293345e8097a43e9e4128b1e5a07ff024b))
-* Error accessing ollama api endpoint in docker ([83aa24a](https://github.com/Gsync/jobsync/commit/83aa24a5ec8f503c1f2c758e4fb5ec5d2506bcc4))
-* Failing Tasks playwright tests ([4c2cecf](https://github.com/Gsync/jobsync/commit/4c2cecf95c77106b7f6fafd2ded8ca4c16822d9c))
-* hydration error, minor refactor ([6d2db31](https://github.com/Gsync/jobsync/commit/6d2db31ebde9ee6afc426f8ece397145becfe731))
-* job status undefined issue ([91d3097](https://github.com/Gsync/jobsync/commit/91d309762d87f863ffd481b6c720b91ee8e21c5a))
-* jobsApplied based on applied field ([d0ad166](https://github.com/Gsync/jobsync/commit/d0ad166a291477bd53663d59165a40bc6af203cb))
-* login error validation ([7df090a](https://github.com/Gsync/jobsync/commit/7df090a6b899b89394d29722f7f247730b2b8713))
-* minor layout issues ([55e1e42](https://github.com/Gsync/jobsync/commit/55e1e42d38e26c74ff675f0a761cabe40cde7cb2))
-* no matching decryption secret ([b8f3919](https://github.com/Gsync/jobsync/commit/b8f3919cc5fa39d241b034639c73684c3284e34d))
-* openssl not found ([290a1a7](https://github.com/Gsync/jobsync/commit/290a1a7b6ba54968ba19ebd0c41a378bbd8b1fa0))
-* resume undefined issue ([dbe01a9](https://github.com/Gsync/jobsync/commit/dbe01a91ede0a378dd9678c44ac73823339e4546))
-* Revalidate company list in addjob when adding company ([785c49b](https://github.com/Gsync/jobsync/commit/785c49b92ef6459fdb9d77045795108d78d26c65))
-* route path ([4234c08](https://github.com/Gsync/jobsync/commit/4234c0808d83871bffb1d2d54a2205a244133771))
-* session based conditional rendering ([b008e1b](https://github.com/Gsync/jobsync/commit/b008e1b7efa0912db5512b33561295b4c59b0c4d))
+* Add job draft date in job details ([f6c2bb6](https://github.com/yash-rai-93/RoleSignal/commit/971d4c5d7383b95fa20a81afc0e55fe9fa3ff76b))
+* Admin tab switch ([8c57052](https://github.com/yash-rai-93/RoleSignal/commit/b6be1ef64a67a6f8734b5e352d5610f589b86072))
+* bullet and order styling of editor content ([423b0f4](https://github.com/yash-rai-93/RoleSignal/commit/8ebfbdb59a5a80c38e3dec095d406ebd2a331573))
+* button hydration error ([d7e97a0](https://github.com/yash-rai-93/RoleSignal/commit/4a768d58c37929166bfcf4b2a4878fbba0c7fb62))
+* Combobox filter issue ([1ab477e](https://github.com/yash-rai-93/RoleSignal/commit/591f0fa4c629324f2f5887e65fb0483cdf070d4a))
+* Combobox undefined error ([fdaa9fe](https://github.com/yash-rai-93/RoleSignal/commit/ea8b52574fd9c88131109decb309a24d5a5e2c25))
+* configure release-please to target dev branch ([9ca7db0](https://github.com/yash-rai-93/RoleSignal/commit/f928e7910ce2c0541c6020d67c45dc34eabf993f))
+* Create company bug when adding experience ([c992077](https://github.com/yash-rai-93/RoleSignal/commit/776a9981d26d1362c588eb5566a4e78c51e0bb39))
+* DatePicker bug in Safari browser ([0f24106](https://github.com/yash-rai-93/RoleSignal/commit/c744e66c38a18e0997a7154132390407010bbe3d))
+* Dialog scroll ([93f8e7d](https://github.com/yash-rai-93/RoleSignal/commit/3d149f59e79a9928885c7841875db065e5b10d60))
+* Edit company ([d7a15e2](https://github.com/yash-rai-93/RoleSignal/commit/0754a0509618b47df5382bc87ae5f560baae7b65))
+* Error accessing ollama api endpoint in docker ([83aa24a](https://github.com/yash-rai-93/RoleSignal/commit/a1f943a9ab4703592b0619bd85b6b47462ccc542))
+* Failing Tasks playwright tests ([4c2cecf](https://github.com/yash-rai-93/RoleSignal/commit/8486db6353600cf307161b0736f6585a0dd5fbfa))
+* hydration error, minor refactor ([6d2db31](https://github.com/yash-rai-93/RoleSignal/commit/4b18d126e9cec35b571ff327a9fd2e947d9bf4c4))
+* job status undefined issue ([91d3097](https://github.com/yash-rai-93/RoleSignal/commit/35dbd70bca647f074d92c2763e9a980bd77a404a))
+* jobsApplied based on applied field ([d0ad166](https://github.com/yash-rai-93/RoleSignal/commit/ea1d1bfa258ff3886c46e81235edcb66a92c6b57))
+* login error validation ([7df090a](https://github.com/yash-rai-93/RoleSignal/commit/102e6fd8ce8acb27c9c064b4aa8af41b9c2f8509))
+* minor layout issues ([55e1e42](https://github.com/yash-rai-93/RoleSignal/commit/69701709576d819415b54184efc0a63eb3feff5a))
+* no matching decryption secret ([b8f3919](https://github.com/yash-rai-93/RoleSignal/commit/f55a1c397eca8b634977413600a188518662b660))
+* openssl not found ([290a1a7](https://github.com/yash-rai-93/RoleSignal/commit/9c945470a4d3e8dd95f0b097e3d42ccf8b86511e))
+* resume undefined issue ([dbe01a9](https://github.com/yash-rai-93/RoleSignal/commit/4345e52b6daa24d6862b49764d348be5e5bcb8b1))
+* Revalidate company list in addjob when adding company ([785c49b](https://github.com/yash-rai-93/RoleSignal/commit/dcd0207e41d21990c500408fd2d1165ce68b9fba))
+* route path ([4234c08](https://github.com/yash-rai-93/RoleSignal/commit/f8f4d14acbf5629be01dbde3a6abd4bd3bb9377c))
+* session based conditional rendering ([b008e1b](https://github.com/yash-rai-93/RoleSignal/commit/2205ebe89ed3c5ff568f6976f7f6409b1a554e23))
 
 ## 1.0.0 (2026-02-28)
 
 
 ### Features
 
-* add release automation ([6fd8247](https://github.com/Gsync/jobsync/commit/6fd8247f836208d61eddae935c4cbd63fac36cde))
+* add release automation ([6fd8247](https://github.com/yash-rai-93/RoleSignal/commit/6c41b11233492822ee061485aeca04a0113e0f74))
 
 
 ### Bug Fixes
 
-* Add job draft date in job details ([f6c2bb6](https://github.com/Gsync/jobsync/commit/f6c2bb65f14364f1292ecccf66c4f2999ba5cfc6))
-* Admin tab swich ([8c57052](https://github.com/Gsync/jobsync/commit/8c5705297c643a13c9d00da34a45d7d85f785f23))
-* bullet and order styling of editor content ([423b0f4](https://github.com/Gsync/jobsync/commit/423b0f43d0cfff76e1522864bd1b5177773692fb))
-* button hydration error ([d7e97a0](https://github.com/Gsync/jobsync/commit/d7e97a014e2d41ccdb1cd77d6baa0b6975576f4b))
-* Combobox filter issue ([1ab477e](https://github.com/Gsync/jobsync/commit/1ab477eb6e64f0aab7da360fcc936897217583e5))
-* Combobox undefined error ([fdaa9fe](https://github.com/Gsync/jobsync/commit/fdaa9fe72c35695136871a8e92fb5311af52a476))
-* configure release-please to target dev branch ([9ca7db0](https://github.com/Gsync/jobsync/commit/9ca7db003a5fb2d0ef4484a223aa7511eb84c08b))
-* Create company bug when adding experience ([c992077](https://github.com/Gsync/jobsync/commit/c99207744f8f038ad490d10dba581dba8c13d960))
-* DatePicker bug in Safari browser ([0f24106](https://github.com/Gsync/jobsync/commit/0f24106ebe5fabbd65336e2de128a623d3406099))
-* Dialog scroll ([93f8e7d](https://github.com/Gsync/jobsync/commit/93f8e7dbec477b14c924ea0f819283c9a1f142f0))
-* Edit company ([d7a15e2](https://github.com/Gsync/jobsync/commit/d7a15e293345e8097a43e9e4128b1e5a07ff024b))
-* Error accessing ollama api endpoint in docker ([83aa24a](https://github.com/Gsync/jobsync/commit/83aa24a5ec8f503c1f2c758e4fb5ec5d2506bcc4))
-* Failing Tasks playwright tests ([4c2cecf](https://github.com/Gsync/jobsync/commit/4c2cecf95c77106b7f6fafd2ded8ca4c16822d9c))
-* hydration error, minor refactor ([6d2db31](https://github.com/Gsync/jobsync/commit/6d2db31ebde9ee6afc426f8ece397145becfe731))
-* job status undefined issue ([91d3097](https://github.com/Gsync/jobsync/commit/91d309762d87f863ffd481b6c720b91ee8e21c5a))
-* jobsApplied based on applied field ([d0ad166](https://github.com/Gsync/jobsync/commit/d0ad166a291477bd53663d59165a40bc6af203cb))
-* login error validation ([7df090a](https://github.com/Gsync/jobsync/commit/7df090a6b899b89394d29722f7f247730b2b8713))
-* minor layout issues ([55e1e42](https://github.com/Gsync/jobsync/commit/55e1e42d38e26c74ff675f0a761cabe40cde7cb2))
-* no matching decryption secret ([b8f3919](https://github.com/Gsync/jobsync/commit/b8f3919cc5fa39d241b034639c73684c3284e34d))
-* openssl not found ([290a1a7](https://github.com/Gsync/jobsync/commit/290a1a7b6ba54968ba19ebd0c41a378bbd8b1fa0))
-* resume undefined issue ([dbe01a9](https://github.com/Gsync/jobsync/commit/dbe01a91ede0a378dd9678c44ac73823339e4546))
-* Revalidate company list in addjob when adding company ([785c49b](https://github.com/Gsync/jobsync/commit/785c49b92ef6459fdb9d77045795108d78d26c65))
-* route path ([4234c08](https://github.com/Gsync/jobsync/commit/4234c0808d83871bffb1d2d54a2205a244133771))
-* session based conditional rendering ([b008e1b](https://github.com/Gsync/jobsync/commit/b008e1b7efa0912db5512b33561295b4c59b0c4d))
+* Add job draft date in job details ([f6c2bb6](https://github.com/yash-rai-93/RoleSignal/commit/971d4c5d7383b95fa20a81afc0e55fe9fa3ff76b))
+* Admin tab swich ([8c57052](https://github.com/yash-rai-93/RoleSignal/commit/b6be1ef64a67a6f8734b5e352d5610f589b86072))
+* bullet and order styling of editor content ([423b0f4](https://github.com/yash-rai-93/RoleSignal/commit/8ebfbdb59a5a80c38e3dec095d406ebd2a331573))
+* button hydration error ([d7e97a0](https://github.com/yash-rai-93/RoleSignal/commit/4a768d58c37929166bfcf4b2a4878fbba0c7fb62))
+* Combobox filter issue ([1ab477e](https://github.com/yash-rai-93/RoleSignal/commit/591f0fa4c629324f2f5887e65fb0483cdf070d4a))
+* Combobox undefined error ([fdaa9fe](https://github.com/yash-rai-93/RoleSignal/commit/ea8b52574fd9c88131109decb309a24d5a5e2c25))
+* configure release-please to target dev branch ([9ca7db0](https://github.com/yash-rai-93/RoleSignal/commit/f928e7910ce2c0541c6020d67c45dc34eabf993f))
+* Create company bug when adding experience ([c992077](https://github.com/yash-rai-93/RoleSignal/commit/776a9981d26d1362c588eb5566a4e78c51e0bb39))
+* DatePicker bug in Safari browser ([0f24106](https://github.com/yash-rai-93/RoleSignal/commit/c744e66c38a18e0997a7154132390407010bbe3d))
+* Dialog scroll ([93f8e7d](https://github.com/yash-rai-93/RoleSignal/commit/3d149f59e79a9928885c7841875db065e5b10d60))
+* Edit company ([d7a15e2](https://github.com/yash-rai-93/RoleSignal/commit/0754a0509618b47df5382bc87ae5f560baae7b65))
+* Error accessing ollama api endpoint in docker ([83aa24a](https://github.com/yash-rai-93/RoleSignal/commit/a1f943a9ab4703592b0619bd85b6b47462ccc542))
+* Failing Tasks playwright tests ([4c2cecf](https://github.com/yash-rai-93/RoleSignal/commit/8486db6353600cf307161b0736f6585a0dd5fbfa))
+* hydration error, minor refactor ([6d2db31](https://github.com/yash-rai-93/RoleSignal/commit/4b18d126e9cec35b571ff327a9fd2e947d9bf4c4))
+* job status undefined issue ([91d3097](https://github.com/yash-rai-93/RoleSignal/commit/35dbd70bca647f074d92c2763e9a980bd77a404a))
+* jobsApplied based on applied field ([d0ad166](https://github.com/yash-rai-93/RoleSignal/commit/ea1d1bfa258ff3886c46e81235edcb66a92c6b57))
+* login error validation ([7df090a](https://github.com/yash-rai-93/RoleSignal/commit/102e6fd8ce8acb27c9c064b4aa8af41b9c2f8509))
+* minor layout issues ([55e1e42](https://github.com/yash-rai-93/RoleSignal/commit/69701709576d819415b54184efc0a63eb3feff5a))
+* no matching decryption secret ([b8f3919](https://github.com/yash-rai-93/RoleSignal/commit/f55a1c397eca8b634977413600a188518662b660))
+* openssl not found ([290a1a7](https://github.com/yash-rai-93/RoleSignal/commit/9c945470a4d3e8dd95f0b097e3d42ccf8b86511e))
+* resume undefined issue ([dbe01a9](https://github.com/yash-rai-93/RoleSignal/commit/4345e52b6daa24d6862b49764d348be5e5bcb8b1))
+* Revalidate company list in addjob when adding company ([785c49b](https://github.com/yash-rai-93/RoleSignal/commit/dcd0207e41d21990c500408fd2d1165ce68b9fba))
+* route path ([4234c08](https://github.com/yash-rai-93/RoleSignal/commit/f8f4d14acbf5629be01dbde3a6abd4bd3bb9377c))
+* session based conditional rendering ([b008e1b](https://github.com/yash-rai-93/RoleSignal/commit/2205ebe89ed3c5ff568f6976f7f6409b1a554e23))

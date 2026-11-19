@@ -27,7 +27,7 @@ export const TELEMETRY_ENABLED = endpoint.length > 0;
 export const CAPTURE_CONTENT =
   TELEMETRY_ENABLED && process.env.OTEL_CAPTURE_CONTENT === "true";
 
-export const SERVICE_NAME = process.env.OTEL_SERVICE_NAME || "jobsync";
+export const SERVICE_NAME = process.env.OTEL_SERVICE_NAME || "rolesignal";
 
 // The base/suffix split is the OTel convention, and is what keeps the backend
 // swappable for Seq, Tempo or SigNoz by changing one URL.

@@ -141,10 +141,10 @@ function CompaniesTable({
                   <img
                     alt="Company logo"
                     className="w-8 h-8 rounded-md object-cover"
-                    src={company.logoUrl || "/images/jobsync-logo.svg"}
+                    src={company.logoUrl || "/images/rolesignal-logo.svg"}
                     onError={(e) => {
                       e.currentTarget.onerror = null;
-                      e.currentTarget.src = "/images/jobsync-logo.svg";
+                      e.currentTarget.src = "/images/rolesignal-logo.svg";
                     }}
                   />
                 </TableCell>

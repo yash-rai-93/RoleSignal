@@ -153,8 +153,8 @@ export const POST = async (req: NextRequest) => {
         // 5-page limits — did the model see the whole document?
         truncated,
       }),
-      "jobsync.user_id": userId,
-      "jobsync.resume_id": resumeId,
+      "rolesignal.user_id": userId,
+      "rolesignal.resume_id": resumeId,
     });
 
     const importUsage = startAiCall({

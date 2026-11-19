@@ -1,5 +1,5 @@
 // toWikiPageName capitalises every word of the file name, "To" included
-export const UPGRADE_GUIDE_URL = "https://github.com/Gsync/jobsync/wiki/Upgrading-To-Postgres";
+export const UPGRADE_GUIDE_URL = "https://github.com/yash-rai-93/RoleSignal/blob/main/wiki/upgrading-to-postgres.md";
 
 export interface Target {
   host: string;
@@ -73,7 +73,7 @@ export function maintenanceUrl(raw: string): string {
 export const quoteIdent = (name: string) => `"${name.replace(/"/g, '""')}"`;
 
 // Driver messages can echo the connection string. Only the :password@ form
-// is masked, since the default password "jobsync" is also the user and db name
+// is masked, since the default password "rolesignal" is also the user and db name
 export function redact(message: string, raw: string): string {
   let password = "";
   try {
@@ -101,7 +101,7 @@ export function authMessage(target: Target): string {
       "",
       "The most likely cause is that POSTGRES_PASSWORD was changed after the database volume was created.",
       "That variable only applies the first time the volume is initialised. Either change it back, or run",
-      "ALTER USER jobsync PASSWORD '<new>' inside the jobsync_db container.",
+      "ALTER USER rolesignal PASSWORD '<new>' inside the rolesignal_db container.",
     ].join("\n");
   }
   return [
@@ -122,7 +122,7 @@ export function createdMessage(target: Target): string {
 
 export function missingDatabaseMessage(target: Target, why: string | null): string {
   const head = why
-    ? [`Database "${target.database}" does not exist on ${target.host}:${target.port}, and JobSync`, `could not create it: ${why}`]
+    ? [`Database "${target.database}" does not exist on ${target.host}:${target.port}, and RoleSignal`, `could not create it: ${why}`]
     : [`Database "${target.database}" does not exist on ${target.host}:${target.port}.`];
   return [
     ...head,

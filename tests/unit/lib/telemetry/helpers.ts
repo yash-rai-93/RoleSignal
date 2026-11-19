@@ -14,7 +14,7 @@ export async function loadTelemetry(env: TelemetryEnv = {}) {
   vi.stubEnv("OTEL_EXPORTER_OTLP_ENDPOINT", env.endpoint ?? "");
   vi.stubEnv("OTEL_CAPTURE_CONTENT", env.captureContent ? "true" : "false");
   vi.stubEnv("OTEL_EXPORTER_OTLP_HEADERS", env.headers ?? "");
-  vi.stubEnv("OTEL_SERVICE_NAME", env.serviceName ?? "jobsync-test");
+  vi.stubEnv("OTEL_SERVICE_NAME", env.serviceName ?? "rolesignal-test");
   vi.resetModules();
 
   const otlp = await import("@/lib/telemetry/otlp");

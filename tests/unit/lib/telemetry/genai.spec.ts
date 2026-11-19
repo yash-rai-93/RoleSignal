@@ -13,7 +13,7 @@ const usage = {
 describe("genai attribute mapping", () => {
   afterEach(() => vi.unstubAllEnvs());
 
-  it("maps request fields onto standard and jobsync attributes", async () => {
+  it("maps request fields onto standard and rolesignal attributes", async () => {
     const { genai } = await loadTelemetry({ endpoint: ENDPOINT });
     const attrs = genai.genAiRequestAttrs({
       provider: "ollama",
@@ -27,8 +27,8 @@ describe("genai attribute mapping", () => {
       "gen_ai.system": "ollama",
       "gen_ai.request.model": "qwen3.5:9b",
       "gen_ai.request.temperature": 0.1,
-      "jobsync.surface": "agent.chat",
-      "jobsync.ollama.num_ctx": 16384,
+      "rolesignal.surface": "agent.chat",
+      "rolesignal.ollama.num_ctx": 16384,
     });
   });
 
@@ -94,9 +94,9 @@ describe("genai attribute mapping", () => {
     expect(
       genai.inputSizeAttrs({ resumeChars: 14_500, jobChars: 3_200, truncated: true }),
     ).toEqual({
-      "jobsync.input.resume_chars": 14_500,
-      "jobsync.input.job_chars": 3_200,
-      "jobsync.input.truncated": true,
+      "rolesignal.input.resume_chars": 14_500,
+      "rolesignal.input.job_chars": 3_200,
+      "rolesignal.input.truncated": true,
     });
   });
 });

@@ -2,9 +2,9 @@
 okf_version: "0.2"
 ---
 
-# JobSync Help
+# RoleSignal Help
 
-JobSync tracks job applications, resumes and the work you do around them. These pages cover how to use it.
+RoleSignal tracks job applications, resumes and the work you do around them. These pages cover how to use it.
 
 - [Getting Started](./getting-started.md) — create an account, connect an AI provider, add your first job, and what each area of the app is for.
 - [Jobs](./jobs.md) — add jobs manually or by pasting a posting into AI chat, move them through the status workflow, edit, filter, export and delete them.
@@ -19,4 +19,4 @@ JobSync tracks job applications, resumes and the work you do around them. These 
 - [Upgrading to Postgres](./upgrading-to-postgres.md) — what to do before upgrading from a SQLite release, running 1.2.0 once to import its data, backing up with `backup-db.sh`, and using your own Postgres.
 - [MCP Access](./mcp.md) — connect an external AI agent such as Claude Desktop, generate and revoke access tokens, and what the agent can do once connected.
 
-Installation, Docker and environment variables are in the [project README](https://github.com/Gsync/jobsync#readme).
+Installation, Docker and environment variables are in the [project README](https://github.com/yash-rai-93/RoleSignal#readme).

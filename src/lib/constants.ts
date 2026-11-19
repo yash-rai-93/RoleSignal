@@ -53,7 +53,7 @@ export const APP_CONSTANTS = {
 
   // Update check: the upstream repo and how long a GitHub release lookup is
   // cached. A day is plenty — releases are rare and the check is unauthenticated.
-  GITHUB_REPO: "Gsync/jobsync",
+  GITHUB_REPO: "yash-rai-93/RoleSignal",
   UPDATE_CHECK_REVALIDATE_SECONDS: 86_400,
   // Paired so the rail width and its matching content offset can't drift.
   SIDEBAR_WIDTH: {
@@ -229,7 +229,7 @@ export const APP_CONSTANTS = {
   TELEMETRY_BATCH_SIZE: 200,
   TELEMETRY_EXPORT_TIMEOUT_MS: 5_000,
   // A resume-review prompt runs 10-50 KB; this caps what leaves the process.
-  // Not the same thing as jobsync.input.truncated — see spec section 8.
+  // Not the same thing as rolesignal.input.truncated — see spec section 8.
   TELEMETRY_MAX_ATTR_CHARS: 32_000,
 
   // File uploads

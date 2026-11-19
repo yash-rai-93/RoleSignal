@@ -47,7 +47,7 @@ describe("telemetry config", () => {
     const fetchMock = mockFetchOk();
     const { span, otlp } = await loadTelemetry();
 
-    const a = span.startSpan("agent.chat.turn", { "jobsync.surface": "agent.chat" });
+    const a = span.startSpan("agent.chat.turn", { "rolesignal.surface": "agent.chat" });
     const b = span.startSpan("agent.nested.review_resume");
     a.setAttrs({ "gen_ai.usage.input_tokens": 10 });
     a.setError(new Error("ignored"));

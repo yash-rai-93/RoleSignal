@@ -87,7 +87,7 @@ export async function runNestedGeneration({
   // still emit both nested tools in a single step, and two 180s sub-calls
   // serialize on Ollama past the 300s turn deadline, losing both.
   if (guard.running) {
-    span.end({ "jobsync.nested.status": "busy" });
+    span.end({ "rolesignal.nested.status": "busy" });
     return { status: "busy" };
   }
   guard.running = true;
@@ -144,14 +144,14 @@ export async function runNestedGeneration({
       if (finishReason !== "stop") {
         span.setError(new Error(`finishReason=${finishReason}`));
         span.end({
-          "jobsync.nested.status": "incomplete",
+          "rolesignal.nested.status": "incomplete",
           ...genAiResponseAttrs({ finishReason }),
         });
         return { status: "incomplete" };
       }
 
       span.end({
-        "jobsync.nested.status": "ok",
+        "rolesignal.nested.status": "ok",
         ...genAiResponseAttrs({ usage: tokens, finishReason, text }),
       });
       return { status: "ok", text };
@@ -159,7 +159,7 @@ export async function runNestedGeneration({
       void tracker.finish({ error, abortedBy: signal });
       log.error(`[agent-chat] ${label} generation failed`, { error: String(error) });
       span.setError(error);
-      span.end({ "jobsync.nested.status": "failed" });
+      span.end({ "rolesignal.nested.status": "failed" });
       return { status: "failed" };
     } finally {
       guard.elapsedMs += Date.now() - startedAt;

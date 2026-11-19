@@ -19,7 +19,7 @@ export function makeTestDb(): { url: string; schema: string; dir: string } | nul
   const url = new URL(base);
   // A schema of its own, so the run never touches the database's real tables
   url.searchParams.set("schema", schema);
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "jobsync-backup-"));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "rolesignal-backup-"));
   return { url: url.toString(), schema, dir };
 }
 

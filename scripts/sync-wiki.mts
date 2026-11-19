@@ -81,7 +81,7 @@ function publish(files: Map<string, string>, sidebar: string): void {
   }
 
   const remote = `https://x-access-token:${token}@github.com/${repository}.wiki.git`;
-  const checkout = fs.mkdtempSync(path.join(os.tmpdir(), "jobsync-wiki-"));
+  const checkout = fs.mkdtempSync(path.join(os.tmpdir(), "rolesignal-wiki-"));
   // Never log `remote`: it carries the token.
   git(process.cwd(), "clone", "--depth", "1", remote, checkout);
 

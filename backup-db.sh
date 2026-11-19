@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# JobSync database backup
+# RoleSignal database backup
 # Usage: ./backup-db.sh
-# Writes jobsyncdb/data/backups/jobsync-YYYY-MM-DD-HHMM.sql.gz
+# Writes rolesignaldb/data/backups/rolesignal-YYYY-MM-DD-HHMM.sql.gz
 
 # pipefail matters: without it a failed pg_dump still lets gzip exit 0 and
 # leaves a dated, valid, empty archive that looks like a backup.
@@ -34,14 +34,14 @@ PG_DUMP_IMAGE="$(env_value PG_DUMP_IMAGE)"
 PG_DUMP_IMAGE="${PG_DUMP_IMAGE:-pgvector/pgvector:pg18}"
 export DATABASE_URL
 
-BACKUP_DIR="jobsyncdb/data/backups"
+BACKUP_DIR="rolesignaldb/data/backups"
 if ! mkdir -p "$BACKUP_DIR" 2>/dev/null || [ ! -w "$BACKUP_DIR" ]; then
-    echo "Cannot write to $BACKUP_DIR. The app container owns jobsyncdb/data; re-run with sudo."
+    echo "Cannot write to $BACKUP_DIR. The app container owns rolesignaldb/data; re-run with sudo."
     exit 1
 fi
 
 # Dump to a temporary name; only a complete dump gets a dated file name
-TMP="$(mktemp "$BACKUP_DIR/.jobsync-dump.XXXXXX")"
+TMP="$(mktemp "$BACKUP_DIR/.rolesignal-dump.XXXXXX")"
 ERR="$(mktemp)"
 trap 'rm -f "$TMP" "$ERR"' EXIT
 
@@ -79,7 +79,7 @@ else
         exit 1
     fi
     echo "Backing up the bundled database..."
-    dump() { $COMPOSE_CMD exec -T db pg_dump -U jobsync jobsync; }
+    dump() { $COMPOSE_CMD exec -T db pg_dump -U rolesignal rolesignal; }
 fi
 
 if ! dump 2>"$ERR" | gzip > "$TMP"; then
@@ -93,6 +93,6 @@ if ! dump 2>"$ERR" | gzip > "$TMP"; then
     exit 1
 fi
 
-OUT="$BACKUP_DIR/jobsync-$(date +%F-%H%M).sql.gz"
+OUT="$BACKUP_DIR/rolesignal-$(date +%F-%H%M).sql.gz"
 mv "$TMP" "$OUT"
 echo "Backup written to $OUT ($(du -h "$OUT" | cut -f1))"

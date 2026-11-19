@@ -7,7 +7,7 @@ import {
 
 describe("buildDonutSlices", () => {
   const activities = [
-    { label: "Jobsync", hours: 28.1 },
+    { label: "RoleSignal", hours: 28.1 },
     { label: "Side Project 1", hours: 9.2 },
     { label: "Learning", hours: 8.6 },
   ];
@@ -37,8 +37,8 @@ describe("buildDonutSlices", () => {
 
     expect(slices).toHaveLength(3);
     expect(slices[0]).toMatchObject({
-      id: "Jobsync",
-      label: "Jobsync",
+      id: "RoleSignal",
+      label: "RoleSignal",
       value: 28.1,
     });
   });
@@ -89,14 +89,14 @@ describe("buildDonutSlices", () => {
   it("drops activities with no logged hours", () => {
     const slices = buildDonutSlices(
       [
-        { label: "Jobsync", hours: 4 },
+        { label: "RoleSignal", hours: 4 },
         { label: "Learning", hours: 0 },
       ],
       0,
       "light",
     );
 
-    expect(slices.map((s) => s.label)).toEqual(["Jobsync"]);
+    expect(slices.map((s) => s.label)).toEqual(["RoleSignal"]);
   });
 
   it("returns nothing when there is no activity at all", () => {
@@ -109,14 +109,14 @@ describe("arcLabelLines", () => {
     expect(
       arcLabelLines(
         {
-          id: "Jobsync",
-          label: "Jobsync",
+          id: "RoleSignal",
+          label: "RoleSignal",
           value: 28.1,
           color: "#2a9d90",
         },
         12,
       ),
-    ).toEqual(["Jobsync", "28.1h"]);
+    ).toEqual(["RoleSignal", "28.1h"]);
   });
 
   it("trims a long activity name so it cannot run off the card", () => {

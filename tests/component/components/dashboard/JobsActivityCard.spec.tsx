@@ -49,7 +49,7 @@ describe("JobsActivityCard", () => {
         jobsApplied: 16,
         jobsTrend: 25,
         topActivities: [
-          { label: "Jobsync", hours: 28.1 },
+          { label: "RoleSignal", hours: 28.1 },
           { label: "Side Project 1", hours: 9.2 },
           { label: "Learning", hours: 8.6 },
         ],
@@ -95,8 +95,8 @@ describe("JobsActivityCard", () => {
   it("feeds the same slices to the donut", () => {
     render(<JobsActivityCard data={data} />);
 
-    expect(screen.getByTestId("slice-Jobsync")).toHaveTextContent(
-      "Jobsync:28.1:#2a9d90",
+    expect(screen.getByTestId("slice-RoleSignal")).toHaveTextContent(
+      "RoleSignal:28.1:#2a9d90",
     );
     expect(screen.getByTestId("slice-__other__")).toHaveTextContent(
       "Other:17.5:#94a3b8:Networking=10.5,Interviewing=7",
@@ -113,7 +113,7 @@ describe("JobsActivityCard", () => {
 
     expect(within(total).getByText("6.4h")).toBeInTheDocument();
     expect(within(total).getByText("34 jobs")).toBeInTheDocument();
-    expect(screen.queryByText("Jobsync")).not.toBeInTheDocument();
+    expect(screen.queryByText("RoleSignal")).not.toBeInTheDocument();
     expect(screen.queryByText("Other")).not.toBeInTheDocument();
   });
 

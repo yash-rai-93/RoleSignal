@@ -79,7 +79,7 @@ export function buildReviewResumeTool(ctx: ReviewResumeContext) {
         provider: ctx.provider,
         modelName: ctx.modelName,
         attrs: {
-          "jobsync.input.resume_chars": pre.data.normalizedText.length,
+          "rolesignal.input.resume_chars": pre.data.normalizedText.length,
         },
       });
       if (generation.status === "busy") {

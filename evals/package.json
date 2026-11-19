@@ -1,5 +1,5 @@
 {
-  "name": "jobsync-evals",
+  "name": "rolesignal-evals",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -19,5 +19,14 @@
   },
   "overrides": {
     "@hono/node-server": ">=2.1.6 <3"
+  },
+  "author": {
+    "name": "yash-rai-93",
+    "email": "yashrai4426@gmail.com",
+    "url": "https://github.com/yash-rai-93"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yash-rai-93/RoleSignal.git"
   }
 }

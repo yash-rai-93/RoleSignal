@@ -76,7 +76,7 @@ describe("buildPageContextMessage", () => {
     }
   });
 
-  // Defect B: "no job is currently active in JobSync" means nothing to a user
+  // Defect B: "no job is currently active in RoleSignal" means nothing to a user
   // looking at a screen full of jobs. The line has to name the page.
   it("names the jobs list rather than reporting an internal condition", () => {
     const message = buildPageContextMessage({ route: "/dashboard/myjobs" });

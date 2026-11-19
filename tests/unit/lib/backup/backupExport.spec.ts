@@ -175,7 +175,7 @@ describe("buildBackupZip", () => {
   let tmp: string;
 
   beforeEach(() => {
-    tmp = fs.mkdtempSync(path.join(os.tmpdir(), "jobsync-export-"));
+    tmp = fs.mkdtempSync(path.join(os.tmpdir(), "rolesignal-export-"));
     (APP_CONSTANTS as { UPLOADS_DIR: string }).UPLOADS_DIR = tmp;
   });
 

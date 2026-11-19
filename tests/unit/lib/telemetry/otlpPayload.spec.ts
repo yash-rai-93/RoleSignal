@@ -24,14 +24,14 @@ describe("otlp payload shape", () => {
   it("nests resourceSpans / scopeSpans and carries service.name", async () => {
     const { otlp } = await loadTelemetry({
       endpoint: ENDPOINT,
-      serviceName: "jobsync-test",
+      serviceName: "rolesignal-test",
     });
     const payload = otlp.buildTracePayload([span()]) as any;
 
     expect(payload.resourceSpans).toHaveLength(1);
     expect(payload.resourceSpans[0].resource.attributes).toContainEqual({
       key: "service.name",
-      value: { stringValue: "jobsync-test" },
+      value: { stringValue: "rolesignal-test" },
     });
     const encoded = payload.resourceSpans[0].scopeSpans[0].spans[0];
     expect(encoded.traceId).toBe("5b8aa5a2d2c872e8321cf37308d69df2");
@@ -50,7 +50,7 @@ describe("otlp payload shape", () => {
           "gen_ai.request.model": "qwen3.5:9b",
           "gen_ai.usage.input_tokens": 1234,
           "gen_ai.request.temperature": 0.1,
-          "jobsync.prefix_changed": true,
+          "rolesignal.prefix_changed": true,
           "gen_ai.prompt": { role: "user", content: "hi" },
         },
       }),
@@ -62,7 +62,7 @@ describe("otlp payload shape", () => {
     expect(byKey["gen_ai.usage.input_tokens"]).toEqual({ intValue: "1234" });
     // Not doubleValue: OpenObserve 400s that and drops the entire batch.
     expect(byKey["gen_ai.request.temperature"]).toEqual({ stringValue: "0.1" });
-    expect(byKey["jobsync.prefix_changed"]).toEqual({ boolValue: true });
+    expect(byKey["rolesignal.prefix_changed"]).toEqual({ boolValue: true });
     expect(byKey["gen_ai.prompt"]).toEqual({
       stringValue: '{"role":"user","content":"hi"}',
     });
@@ -80,9 +80,9 @@ describe("otlp payload shape", () => {
     expect(byKey["gen_ai.prompt"].stringValue).toHaveLength(
       APP_CONSTANTS.TELEMETRY_MAX_ATTR_CHARS,
     );
-    // The telemetry cap is a different fact from jobsync.input.truncated:
+    // The telemetry cap is a different fact from rolesignal.input.truncated:
     // the model still saw the whole thing.
-    expect(byKey["jobsync.telemetry.capped_attrs"]).toEqual({
+    expect(byKey["rolesignal.telemetry.capped_attrs"]).toEqual({
       stringValue: "gen_ai.prompt",
     });
   });

@@ -2,7 +2,7 @@ import { checkUrl, classify, maintenanceUrl, quoteIdent, redact, UPGRADE_GUIDE_U
 import { waitForDb, type WaitDeps } from "../../../scripts/wait/run";
 
 const SECRET = "s3cr@t:pa/ss#word";
-const URL_OK = `postgres://jobsync:${encodeURIComponent(SECRET)}@db.example.internal:5433/jobsync`;
+const URL_OK = `postgres://rolesignal:${encodeURIComponent(SECRET)}@db.example.internal:5433/rolesignal`;
 
 const failure = (code?: string, message = "boom") => Object.assign(new Error(message), { code });
 
@@ -43,7 +43,7 @@ describe("checkUrl", () => {
   it("parses host, port and database", () => {
     expect(checkUrl(URL_OK)).toEqual({
       ok: true,
-      target: { host: "db.example.internal", port: "5433", database: "jobsync" },
+      target: { host: "db.example.internal", port: "5433", database: "rolesignal" },
     });
   });
 
@@ -116,9 +116,9 @@ describe("helpers", () => {
   });
 
   it("keeps a default password readable where it is the user or db name", () => {
-    const raw = "postgres://jobsync:jobsync@db:5432/jobsync";
-    expect(redact(`User \`jobsync\` denied on \`jobsync.public\` via ${raw}`, raw)).toBe(
-      "User `jobsync` denied on `jobsync.public` via postgres://jobsync:***@db:5432/jobsync",
+    const raw = "postgres://rolesignal:rolesignal@db:5432/rolesignal";
+    expect(redact(`User \`rolesignal\` denied on \`rolesignal.public\` via ${raw}`, raw)).toBe(
+      "User `rolesignal` denied on `rolesignal.public` via postgres://rolesignal:***@db:5432/rolesignal",
     );
   });
 });
@@ -127,7 +127,7 @@ describe("waitForDb", () => {
   it("returns 0 on a first-try connection", async () => {
     const h = harness();
     expect(await waitForDb(h.deps)).toBe(0);
-    expect(h.text()).toContain("Database reachable at db.example.internal:5433/jobsync.");
+    expect(h.text()).toContain("Database reachable at db.example.internal:5433/rolesignal.");
   });
 
   it("retries a starting database and then succeeds", async () => {
@@ -153,7 +153,7 @@ describe("waitForDb", () => {
   });
 
   it("names password rotation for the bundled database", async () => {
-    const h = harness({ url: "postgres://jobsync:jobsync@db:5432/jobsync", attempts: [failure("28P01")] });
+    const h = harness({ url: "postgres://rolesignal:rolesignal@db:5432/rolesignal", attempts: [failure("28P01")] });
     expect(await waitForDb(h.deps)).toBe(1);
     expect(h.text()).toContain("POSTGRES_PASSWORD was changed after the database volume was created");
   });
@@ -170,9 +170,9 @@ describe("waitForDb", () => {
     const h = harness({ attempts: [failure("3D000"), null] });
     expect(await waitForDb(h.deps)).toBe(0);
     expect(h.created).toEqual([
-      { url: `postgres://jobsync:${encodeURIComponent(SECRET)}@db.example.internal:5433/postgres`, name: '"jobsync"' },
+      { url: `postgres://rolesignal:${encodeURIComponent(SECRET)}@db.example.internal:5433/postgres`, name: '"rolesignal"' },
     ]);
-    expect(h.text()).toContain('Database "jobsync" did not exist on db.example.internal:5433 — created it.');
+    expect(h.text()).toContain('Database "rolesignal" did not exist on db.example.internal:5433 — created it.');
     expect(h.text()).toContain("a typo in the database");
   });
 
@@ -184,7 +184,7 @@ describe("waitForDb", () => {
     expect(await waitForDb(h.deps)).toBe(1);
     const text = h.text();
     expect(text).toContain("could not create it: permission denied to create database");
-    expect(text).toContain("CREATE DATABASE jobsync OWNER <role>;");
+    expect(text).toContain("CREATE DATABASE rolesignal OWNER <role>;");
     expect(text).toContain("GRANT ALL ON SCHEMA public TO <role>;");
   });
 
@@ -192,7 +192,7 @@ describe("waitForDb", () => {
     const h = harness({ attempts: [failure("3D000")], env: { CREATE_DATABASE_IF_MISSING: "0" } });
     expect(await waitForDb(h.deps)).toBe(1);
     expect(h.created).toEqual([]);
-    expect(h.text()).toContain("CREATE DATABASE jobsync OWNER <role>;");
+    expect(h.text()).toContain("CREATE DATABASE rolesignal OWNER <role>;");
   });
 
   it("does not loop when the database is still missing after creating it", async () => {
@@ -203,7 +203,7 @@ describe("waitForDb", () => {
 
   it("explains an unresolvable bundled host", async () => {
     const h = harness({
-      url: "postgres://jobsync:jobsync@db:5432/jobsync",
+      url: "postgres://rolesignal:rolesignal@db:5432/rolesignal",
       attempts: [failure("ECONNREFUSED")],
       dbResolves: false,
     });
@@ -219,7 +219,7 @@ describe("waitForDb", () => {
       { attempts: [failure("ECONNREFUSED", `Can't reach ${URL_OK}`)] },
       { attempts: [failure("3D000")], createFails: new Error(`denied for ${URL_OK}`) },
       { attempts: [failure("3D000"), null] },
-      { url: `postgres://jobsync:${SECRET}@host/db`, attempts: [failure("28P01")] },
+      { url: `postgres://rolesignal:${SECRET}@host/db`, attempts: [failure("28P01")] },
     ];
     for (const c of cases) {
       const h = harness(c);

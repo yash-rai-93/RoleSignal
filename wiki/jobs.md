@@ -68,7 +68,7 @@ The Jobs card header has three tools. The **search box** matches on job text. Th
 
 In table view, click a column header — **Applied**, **Title**, **Company**, **Location**, **Match** or **Source** — to sort the whole list, not just the rows loaded so far. The first click puts the most useful end first (newest dates and highest match scores first; names A→Z), a second click reverses it, and a third returns to the default order, newest added first. Jobs with nothing in that column always stay at the bottom, and a discovered job that hasn't been AI-matched yet sorts with the unmatched ones. Status isn't sortable — use the filter panel instead. The sort resets when you leave the page; card view keeps whatever order the table is sorted in. On a narrow screen only the columns you can see can be clicked.
 
-In table view the Applied column also shows, in smaller grey text under the applied date, the date the job was **Added** to JobSync.
+In table view the Applied column also shows, in smaller grey text under the applied date, the date the job was **Added** to RoleSignal.
 
 The list also has a view toggle for table or card layout, and a reload button that refetches without a full page refresh.
 
@@ -80,4 +80,4 @@ Jobs that already have a score show the score instead. To re-run a match on one 
 
 ## How do I export my jobs to CSV?
 
-Click **Export** in the Jobs card header. Your jobs download as a CSV file named `jobsync-YYYY-MM-DD.csv`. The export covers your jobs, not the reference lists behind them — for a complete, restorable copy of everything including resumes, tasks and activities, use **Settings → Data** instead.
+Click **Export** in the Jobs card header. Your jobs download as a CSV file named `rolesignal-YYYY-MM-DD.csv`. The export covers your jobs, not the reference lists behind them — for a complete, restorable copy of everything including resumes, tasks and activities, use **Settings → Data** instead.

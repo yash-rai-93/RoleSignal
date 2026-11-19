@@ -15,7 +15,7 @@ stale_after: 2027-09-30
 
 An automation is a saved search that runs once a day and brings new job postings to you. It reads the public job boards of the companies you pick, drops the listings that have nothing to do with what you asked for, sends the most promising ones to your AI provider to be scored against one of your resumes, and saves the results as **discovered jobs** you can accept into your tracker or dismiss.
 
-Everything is company-centric: JobSync reads job boards hosted by **Greenhouse**, **Lever** and **Ashby**, so you choose employers rather than searching the whole internet. One automation covers one of those three boards; create a second automation if you want to track companies on another.
+Everything is company-centric: RoleSignal reads job boards hosted by **Greenhouse**, **Lever** and **Ashby**, so you choose employers rather than searching the whole internet. One automation covers one of those three boards; create a second automation if you want to track companies on another.
 
 An automation needs an AI provider and model set under **Settings → AI Provider**, and a resume in your profile to match against.
 
@@ -36,13 +36,13 @@ If you have built a watchlist, the company picker in step 2 shows a **Watched** 
 
 ## Which companies can I track, and how many?
 
-Up to **25 companies** per automation. In the Search step, open the company picker and type a name — JobSync searches an indexed directory of known Greenhouse, Lever and Ashby boards for that provider and you tick the ones you want. The count next to the label shows how many of your 25 slots are used.
+Up to **25 companies** per automation. In the Search step, open the company picker and type a name — RoleSignal searches an indexed directory of known Greenhouse, Lever and Ashby boards for that provider and you tick the ones you want. The count next to the label shows how many of your 25 slots are used.
 
-If a company is not in the directory, add it by hand: paste its board URL (for example `https://boards.greenhouse.io/acme` or `https://jobs.lever.co/acme`) or just its board token into the field below the picker, and press **+**. JobSync resolves it, checks the board really exists, and adds it as a chip. Remove any company with the **×** on its chip.
+If a company is not in the directory, add it by hand: paste its board URL (for example `https://boards.greenhouse.io/acme` or `https://jobs.lever.co/acme`) or just its board token into the field below the picker, and press **+**. RoleSignal resolves it, checks the board really exists, and adds it as a chip. Remove any company with the **×** on its chip.
 
-You can also build a shortlist ahead of time. Open **Library → Companies**, switch the scope dropdown from **My Companies** to **Greenhouse**, **Lever** or **Ashby** under *Browse boards*, and you get the full directory of boards JobSync knows about for that provider — search it, and click **Watch** on any company you care about. Watched companies collect under the **Watchlist** scope, where each row links straight to the live board so you can check whether it is still posting.
+You can also build a shortlist ahead of time. Open **Library → Companies**, switch the scope dropdown from **My Companies** to **Greenhouse**, **Lever** or **Ashby** under *Browse boards*, and you get the full directory of boards RoleSignal knows about for that provider — search it, and click **Watch** on any company you care about. Watched companies collect under the **Watchlist** scope, where each row links straight to the live board so you can check whether it is still posting.
 
-Watching a company adds it to your Library, so a company you already track just gains its board link — JobSync asks you to confirm that first. Unwatching only removes it from the watchlist; the company stays in your Library along with any jobs attached to it.
+Watching a company adds it to your Library, so a company you already track just gains its board link — RoleSignal asks you to confirm that first. Unwatching only removes it from the watchlist; the company stays in your Library along with any jobs attached to it.
 
 ## How do I set up filters so the automation returns good results?
 

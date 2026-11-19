@@ -27,7 +27,7 @@ describe("deleteFile", () => {
   let resumes: string;
 
   beforeEach(() => {
-    tmp = fs.mkdtempSync(path.join(os.tmpdir(), "jobsync-delete-"));
+    tmp = fs.mkdtempSync(path.join(os.tmpdir(), "rolesignal-delete-"));
     resumes = path.join(tmp, "files", "resumes");
     fs.mkdirSync(resumes, { recursive: true });
     (APP_CONSTANTS as { UPLOADS_DIR: string }).UPLOADS_DIR = tmp;

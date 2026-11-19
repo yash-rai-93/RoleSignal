@@ -1,19 +1,17 @@
-# JobSync
+# RoleSignal
 
 <p align="center"><strong>The self-hosted job search assistant with AI-powered resume review, job matching, and automated discovery</strong></p>
 
 <p align="center">
-  <a href="https://demo.jobsync.ca">Live Demo</a> ·
   <a href="#quick-start">Quick Start</a> ·
   <a href="#ai-assistant-in-app-chat">AI Assistant</a> ·
   <a href="#mcp-server-ai-agent-integration">MCP Setup</a> ·
-  <a href="https://github.com/Gsync/jobsync/wiki">Help</a>
+  <a href="https://github.com/yash-rai-93/RoleSignal/tree/main/wiki">Help</a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Gsync/jobsync/releases/latest"><img src="https://img.shields.io/github/v/release/Gsync/jobsync" alt="Latest Release"></a>
-  <a href="./LICENSE"><img src="https://img.shields.io/github/license/Gsync/jobsync" alt="License"></a>
-  <a href="https://github.com/Gsync/jobsync/stargazers"><img src="https://img.shields.io/github/stars/Gsync/jobsync?style=social" alt="GitHub Stars"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/github/license/yash-rai-93/RoleSignal" alt="License"></a>
+  <a href="https://github.com/yash-rai-93/RoleSignal/stargazers"><img src="https://img.shields.io/github/stars/yash-rai-93/RoleSignal?style=social" alt="GitHub Stars"></a>
   <img src="https://img.shields.io/badge/self--hosted-Docker-blue" alt="Self-hosted with Docker">
 </p>
 
@@ -21,13 +19,11 @@ Track every application, get AI resume reviews and job matches, and discover new
 
 🔒 Self-hosted · 🤖 Local AI via Ollama or any cloud provider · 🔌 MCP server for Claude Desktop, Hermes, etc
 
-![AI Job Match](./screenshots/jobsync-ai-jobmatch.gif)
 
-![App Snapshot](./screenshots/jobsync-dashboard.png?raw=true "Jobsync dashboard")
 
-⭐ If JobSync helps your search, a star helps other job seekers find it.
+⭐ If RoleSignal helps your search, a star helps other job seekers find it.
 
-## Why JobSync?
+## Why RoleSignal?
 
 - **One place for your whole search:** applications, resumes, contacts, interviews, tasks and AI help in a single source of truth, instead of scattered spreadsheets, notes and tabs.
 - **Free forever:** no subscription and no paywalled tiers.
@@ -38,20 +34,19 @@ Track every application, get AI resume reviews and job matches, and discover new
 
 - **Application Tracker:** Record every application with its company, title, dates and current status.
 
-  ![Jobs Applied List](./screenshots/jobsync-jobs.png?raw=true "Jobsync Jobs Page")
 
 - **Monitoring Dashboard:** See your search progress, activity and daily goals at a glance.
 - **Resume Management:** Store resumes, export them as PDFs, and import existing PDF or Word files with AI.
 - **Automated Job Discovery:** Schedule searches over company job boards and AI-match each listing to your resume. [Details](#automated-job-discovery)
-- **Task & Activity Management:** Track tasks and time your activities. [Tasks](https://github.com/Gsync/jobsync/wiki/Tasks) · [Activities](https://github.com/Gsync/jobsync/wiki/Activities)
-- **Job Timeline:** Record each stage of a job's hiring process — when it happened, who interviewed you and which questions they asked. [Details](https://github.com/Gsync/jobsync/wiki/Timeline)
-- **Interviews:** One list of every interview round across all your jobs, upcoming and past, with its interviewers, prep questions and outcome. [Details](https://github.com/Gsync/jobsync/wiki/Interviews)
-- **Contacts:** Keep recruiters, interviewers and references, linked to the jobs they touched. [Details](https://github.com/Gsync/jobsync/wiki/Contacts)
-- **Company Pages:** One page per company with its jobs, people and links, plus a watchlist. [Details](https://github.com/Gsync/jobsync/wiki/Companies)
+- **Task & Activity Management:** Track tasks and time your activities. [Tasks](https://github.com/yash-rai-93/RoleSignal/blob/main/wiki/tasks.md) · [Activities](https://github.com/yash-rai-93/RoleSignal/blob/main/wiki/activities.md)
+- **Job Timeline:** Record each stage of a job's hiring process — when it happened, who interviewed you and which questions they asked. [Details](https://github.com/yash-rai-93/RoleSignal/blob/main/wiki/timeline.md)
+- **Interviews:** One list of every interview round across all your jobs, upcoming and past, with its interviewers, prep questions and outcome. [Details](https://github.com/yash-rai-93/RoleSignal/blob/main/wiki/interviews.md)
+- **Contacts:** Keep recruiters, interviewers and references, linked to the jobs they touched. [Details](https://github.com/yash-rai-93/RoleSignal/blob/main/wiki/contacts.md)
+- **Company Pages:** One page per company with its jobs, people and links, plus a watchlist. [Details](https://github.com/yash-rai-93/RoleSignal/blob/main/wiki/companies.md)
 - **Question Bank:** Build a library of interview questions and answers, tagged by skill.
-- **Data Backup & Restore:** Export everything as one zip, import it anywhere, and undo an import. [Details](https://github.com/Gsync/jobsync/wiki/Backup)
+- **Data Backup & Restore:** Export everything as one zip, import it anywhere, and undo an import. [Details](https://github.com/yash-rai-93/RoleSignal/blob/main/wiki/backup.md)
 - **AI Assistant:** A docked chat that reviews resumes, scores job matches, writes cover letters and adds jobs you paste in. [Details](#ai-assistant-in-app-chat)
-- **AI Usage:** See tokens, response times and failures for every AI call, by provider, model and feature. [Details](https://github.com/Gsync/jobsync/wiki/Getting-Started)
+- **AI Usage:** See tokens, response times and failures for every AI call, by provider, model and feature. [Details](https://github.com/yash-rai-93/RoleSignal/blob/main/wiki/getting-started.md)
 - **AI Agent Integration (MCP):** Add jobs and questions from Claude Desktop and other agents. [Details](#mcp-server-ai-agent-integration)
 
 ## Quick Start
@@ -59,12 +54,12 @@ Track every application, get AI resume reviews and job matches, and discover new
 Make sure [Docker](https://www.docker.com) is installed and running, then:
 
 ```sh
-git clone https://github.com/Gsync/jobsync.git
-cd jobsync
-docker compose up
+git clone https://github.com/yash-rai-93/RoleSignal.git
+cd RoleSignal
+docker compose up --build
 ```
 
-> **Note:** The first startup downloads the prebuilt app image, so give it a moment before opening the browser.
+> **Note:** The first startup builds the RoleSignal image from this repository, so give it a moment before opening the browser.
 
 Open [http://localhost:3737](http://localhost:3737) and create your account. That's it!
 
@@ -79,18 +74,20 @@ Environment variables are set in a `.env` file beside `docker-compose.yml` (copy
 | `TZ` | Your timezone (e.g. `America/Edmonton`). **Set this on remote servers** to avoid activity time shifts. |
 | `AUTH_SECRET` | Auto-generated if not set. To set manually: `openssl rand -base64 32` |
 | `ENCRYPTION_KEY` | Encrypts the API keys you save in Settings. **Set your own** (`openssl rand -base64 32`) before adding any keys, and never change it afterwards — a new value makes every stored API key unrecoverable. |
-| `NEXTAUTH_URL` | The address you open JobSync at. Defaults to `http://localhost:3737`; on a homelab server, use the server's IP or hostname. |
+| `NEXTAUTH_URL` | The address you open RoleSignal at. Defaults to `http://localhost:3737`; on a homelab server, use the server's IP or hostname. |
 | `MCP_ENABLED` | Set to `false` to turn off the [MCP server](#mcp-server-ai-agent-integration). Enabled by default. |
-| `DATABASE_URL` | Leave unset to use the bundled Postgres. To use your own, set it to your server's address and also set `BUNDLED_DB=0`; without it an unused bundled database container still starts. The bundled image includes the `pgvector` extension, which an upcoming release uses for knowledge base and resume embeddings; your own server will need it then too. `sslmode=require` verifies the server's certificate; for a self-signed one, use `?uselibpqcompat=true&sslmode=require`. See [Upgrading to Postgres](https://github.com/Gsync/jobsync/wiki/Upgrading-To-Postgres). |
+| `DATABASE_URL` | Leave unset to use the bundled Postgres. To use your own, set it to your server's address and also set `BUNDLED_DB=0`; without it an unused bundled database container still starts. The bundled image includes the `pgvector` extension, which an upcoming release uses for knowledge base and resume embeddings; your own server will need it then too. `sslmode=require` verifies the server's certificate; for a self-signed one, use `?uselibpqcompat=true&sslmode=require`. See [Upgrading to Postgres](https://github.com/yash-rai-93/RoleSignal/blob/main/wiki/upgrading-to-postgres.md). |
 
 ### Updating
 
-**Upgrading from a SQLite release?** Read [Upgrading to Postgres](https://github.com/Gsync/jobsync/wiki/Upgrading-To-Postgres) first — the upgrade is one-way, and a SQLite instance must run release 1.2.0 once to import its data before moving to a newer release.
+This repository builds RoleSignal locally. Published container images are optional and are produced by the manual Release workflow.
 
-From the project directory, run the deploy script to pull the latest image and restart:
+**Moving an existing installation?** Read [Upgrading to Postgres](./wiki/upgrading-to-postgres.md) first. This RoleSignal distribution uses PostgreSQL and does not include a historical SQLite importer.
+
+From the project directory, run the deploy script to pull the latest source, build the app, and restart:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/Gsync/jobsync/main/deploy.sh | sudo bash -s
+./deploy.sh
 ```
 
 On **Windows**, run the PowerShell equivalent from the project directory instead (`deploy.sh` needs WSL or Git Bash; `deploy.ps1` runs natively):
@@ -105,7 +102,7 @@ On **Windows**, run the PowerShell equivalent from the project directory instead
 
 ### AI Assistant (In-App Chat)
 
-All of JobSync's AI features live in one place: a chat panel that docks to the side of the app instead of taking it over, so the page you were on stays visible and usable while the assistant works.
+All of RoleSignal's AI features live in one place: a chat panel that docks to the side of the app instead of taking it over, so the page you were on stays visible and usable while the assistant works.
 
 Open it from the **AI Assistant** button in the header, or let the app open it for you — the **Review** button on a resume and the **Match with AI** and **Cover Letter** buttons on a job all start the matching request in the panel.
 
@@ -144,13 +141,13 @@ More job board sources are on the way. Discovered jobs are surfaced for review �
 
 ### MCP Server (AI Agent Integration)
 
-JobSync exposes an MCP server so AI agents (Claude Desktop, Hermes, OpenClaw, etc.) can add job applications and Question Bank entries directly, with your approval.
+RoleSignal exposes an MCP server so AI agents (Claude Desktop, Hermes, OpenClaw, etc.) can add job applications and Question Bank entries directly, with your approval.
 
 #### Use Case
 
 Browsing a job posting or reading an interview question elsewhere and don't want to break your flow to log it manually? Just ask your connected AI agent, for example:
 
-- *"Add this job to JobSync (copy/paste the complete job details or try providing a link): Senior Backend Engineer at Acme Corp, JobType, location, Job description... "*
+- *"Add this job to RoleSignal (copy/paste the complete job details or try providing a link): Senior Backend Engineer at Acme Corp, JobType, location, Job description... "*
 - *"I just got asked this in an interview — add it to my Question Bank: 'How would you design a rate limiter?' with my answer: ..."*
 
 The agent resolves or creates the company, title, location, and tags by name, and reports back what it matched versus created — so your data stays de-duplicated without you having to switch to the app.
@@ -159,7 +156,7 @@ When you add a job with a substantial description and you've set a **default res
 
 #### 1. Generate a token
 
-1. Sign in to JobSync and go to **Settings > MCP Access**.
+1. Sign in to RoleSignal and go to **Settings > MCP Access**.
 2. Click **Generate**, give it a name (e.g. the client you'll connect, like "Claude Desktop"), and pick an expiry.
 3. Copy the token and config snippets shown — the full token is only displayed once.
 
@@ -174,11 +171,11 @@ When you add a job with a substantial description and you've set a **default res
 ```json
 {
   "mcpServers": {
-    "jobsync": {
+    "rolesignal": {
       "command": "npx",
       "args": [
         "mcp-remote",
-        "http://<your-jobsync-url>/api/mcp",
+        "http://<your-rolesignal-url>/api/mcp",
         "--header",
         "Authorization: Bearer <your-token>"
       ]
@@ -189,7 +186,7 @@ When you add a job with a substantial description and you've set a **default res
 
 3. Save and fully restart Claude Desktop (quit, not just close the window).
 
-> **Note:** Claude Desktop only supports local (stdio) MCP servers directly, so `mcp-remote` is required as a bridge to JobSync's remote endpoint.
+> **Note:** Claude Desktop only supports local (stdio) MCP servers directly, so `mcp-remote` is required as a bridge to RoleSignal's remote endpoint.
 
 </details>
 
@@ -201,9 +198,9 @@ Clients that support `streamable-http` natively can connect directly without `mc
 ```json
 {
   "mcpServers": {
-    "jobsync": {
+    "rolesignal": {
       "type": "streamable-http",
-      "url": "http://<your-jobsync-url>/api/mcp",
+      "url": "http://<your-rolesignal-url>/api/mcp",
       "headers": { "Authorization": "Bearer <your-token>" }
     }
   }
@@ -212,12 +209,12 @@ Clients that support `streamable-http` natively can connect directly without `mc
 
 </details>
 
-> **Self-hosting on a home network?** If your JobSync URL is a plain `http://` LAN address (not `localhost` or HTTPS), add `--allow-http` to the `mcp-remote` args — it refuses non-HTTPS URLs by default. The Settings page adds this flag automatically when it detects a non-localhost HTTP URL.
+> **Self-hosting on a home network?** If your RoleSignal URL is a plain `http://` LAN address (not `localhost` or HTTPS), add `--allow-http` to the `mcp-remote` args — it refuses non-HTTPS URLs by default. The Settings page adds this flag automatically when it detects a non-localhost HTTP URL.
 
 
 ## Help
 
-Usage guides for every feature — from getting started and tracking jobs to interviews, automations, backups, MCP access and upgrading to Postgres — live in the [GitHub Wiki](https://github.com/Gsync/jobsync/wiki).
+Usage guides for every feature — from getting started and tracking jobs to interviews, automations, backups, MCP access and upgrading to Postgres — are in the [documentation](./wiki/index.md).
 
 ## Contributing
 
@@ -253,7 +250,7 @@ Works with [Ollama](https://ollama.com) to run AI models locally on your machine
 - AI settings will show a list of available models based on what you have downloaded in Ollama
 - **Recommended:** Increase the Ollama context length from the default 4k to 16k — this helps automated job matching avoid truncating longer resume/job description prompts. The AI Assistant, resume review, job match and cover letter features aren't affected: they ask Ollama for the context size they need on every call, so raising this setting won't change them. Don't raise it much further either — a very large default costs you noticeably slower responses for no benefit
 - No API key required — runs entirely on your hardware
-- If you are running jobsync on a homelab server, you can expose ollama to network from Ollama settings on your local machine. Also make sure your ollama base url is pointed to your local system IP under API keys section of settings.
+- If you are running rolesignal on a homelab server, you can expose ollama to network from Ollama settings on your local machine. Also make sure your ollama base url is pointed to your local system IP under API keys section of settings.
 
 </details>
 
@@ -302,7 +299,15 @@ Access a wide range of AI models from multiple providers through a single API.
 
 ## Support the Project
 
-If JobSync has been helpful in your job search, consider giving it a star on GitHub! It helps others discover the project and motivates continued development.
+If RoleSignal has been helpful in your job search, consider giving it a star on GitHub! It helps others discover the project and motivates continued development.
 
 Every star means a lot — thank you for your support!
 
+
+## Maintainer
+
+RoleSignal is maintained by [Yash (@yash-rai-93)](https://github.com/yash-rai-93). Contact: [yashrai4426@gmail.com](mailto:yashrai4426@gmail.com).
+
+## License
+
+Licensed under the [MIT License](./LICENSE).

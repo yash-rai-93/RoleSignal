@@ -141,5 +141,5 @@ export async function buildBackupZip(
     compression: "DEFLATE",
   });
   const stamp = new Date().toISOString().slice(0, 10);
-  return { buffer, fileName: `jobsync-backup-${stamp}.zip` };
+  return { buffer, fileName: `rolesignal-backup-${stamp}.zip` };
 }

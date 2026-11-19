@@ -38,21 +38,21 @@ export async function runAutomation(
   return withSpan(
     "automation.run",
     {
-      "jobsync.automation_id": automation.id,
-      "jobsync.automation_name": automation.name,
-      "jobsync.job_board": automation.jobBoard,
-      "jobsync.user_id": automation.userId,
+      "rolesignal.automation_id": automation.id,
+      "rolesignal.automation_name": automation.name,
+      "rolesignal.job_board": automation.jobBoard,
+      "rolesignal.user_id": automation.userId,
     },
     (span) =>
       runAutomationTraced(automation, signal).then((result) => {
         span.setAttrs({
-          "jobsync.run.id": result.runId,
-          "jobsync.run.status": result.status,
-          "jobsync.run.jobs_searched": result.jobsSearched,
-          "jobsync.run.jobs_deduplicated": result.jobsDeduplicated,
-          "jobsync.run.jobs_processed": result.jobsProcessed,
-          "jobsync.run.jobs_matched": result.jobsMatched,
-          "jobsync.run.jobs_saved": result.jobsSaved,
+          "rolesignal.run.id": result.runId,
+          "rolesignal.run.status": result.status,
+          "rolesignal.run.jobs_searched": result.jobsSearched,
+          "rolesignal.run.jobs_deduplicated": result.jobsDeduplicated,
+          "rolesignal.run.jobs_processed": result.jobsProcessed,
+          "rolesignal.run.jobs_matched": result.jobsMatched,
+          "rolesignal.run.jobs_saved": result.jobsSaved,
         });
         return result;
       }),

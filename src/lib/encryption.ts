@@ -14,7 +14,7 @@ const KEY_LENGTH = 32;
 const SALT_LENGTH = 16;
 const PBKDF2_ITERATIONS = 100_000;
 // Fallback for decrypting records created before per-record random salts
-const LEGACY_SALT = "jobsync-api-key-encryption";
+const LEGACY_SALT = Buffer.from("6a6f6273796e632d6170692d6b65792d656e6372797074696f6e", "hex");
 
 function getDerivedKey(salt: string | Buffer): Buffer {
   const secret = process.env.ENCRYPTION_KEY;

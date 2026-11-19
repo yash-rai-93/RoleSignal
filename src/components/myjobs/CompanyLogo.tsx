@@ -15,10 +15,10 @@ export function CompanyLogo({
     <img
       alt="Company logo"
       className={cn("rounded-md object-cover", className)}
-      src={logoUrl || "/images/jobsync-logo.svg"}
+      src={logoUrl || "/images/rolesignal-logo.svg"}
       onError={(e) => {
         e.currentTarget.onerror = null;
-        e.currentTarget.src = "/images/jobsync-logo.svg";
+        e.currentTarget.src = "/images/rolesignal-logo.svg";
       }}
     />
   );

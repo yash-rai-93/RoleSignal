@@ -236,7 +236,7 @@ export const POST = async (req: NextRequest) => {
       system: AGENT_CHAT_SYSTEM_PROMPT,
       prompt: modelMessages,
     }),
-    "jobsync.user_id": userId,
+    "rolesignal.user_id": userId,
   });
 
   // toUIMessageStream maps and logs a stream failure, then the SDK re-wraps
@@ -367,17 +367,17 @@ export const POST = async (req: NextRequest) => {
           usage: turnUsage,
           finishReason: turnFinishReason,
         }),
-        "jobsync.tool": fields.tool,
-        "jobsync.tool_state": fields.toolState,
-        "jobsync.outcome": fields.outcome,
-        "jobsync.aborted": fields.aborted,
-        "jobsync.paste_chars": fields.pasteChars,
-        "jobsync.message_count": fields.messageCount,
-        "jobsync.history_dropped": fields.historyDropped,
-        "jobsync.system_chars": fields.systemChars,
-        "jobsync.tool_chars": fields.toolChars,
-        "jobsync.message_chars": fields.messageChars,
-        "jobsync.prefix_changed": fields.prefixChanged,
+        "rolesignal.tool": fields.tool,
+        "rolesignal.tool_state": fields.toolState,
+        "rolesignal.outcome": fields.outcome,
+        "rolesignal.aborted": fields.aborted,
+        "rolesignal.paste_chars": fields.pasteChars,
+        "rolesignal.message_count": fields.messageCount,
+        "rolesignal.history_dropped": fields.historyDropped,
+        "rolesignal.system_chars": fields.systemChars,
+        "rolesignal.tool_chars": fields.toolChars,
+        "rolesignal.message_chars": fields.messageChars,
+        "rolesignal.prefix_changed": fields.prefixChanged,
       });
       // The stream's cancel path can run this before isAborted is set, so the
       // signal decides too; statusOf ignores abortedBy unless it fired.

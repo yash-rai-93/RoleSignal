@@ -99,10 +99,10 @@ function toKeyValues(attrs: Attrs): unknown[] {
     out.push({ key, value: encoded });
   }
   // Marks that TELEMETRY clipped the attribute, not that the app clipped the
-  // model input — jobsync.input.truncated is the other fact entirely.
+  // model input — rolesignal.input.truncated is the other fact entirely.
   if (capped.length) {
     out.push({
-      key: "jobsync.telemetry.capped_attrs",
+      key: "rolesignal.telemetry.capped_attrs",
       value: { stringValue: capped.join(",") },
     });
   }
@@ -163,7 +163,7 @@ export function buildTracePayload(spans: QueuedSpan[]) {
       {
         resource: resource(),
         scopeSpans: [
-          { scope: { name: "jobsync" }, spans: encodeEach(spans, encodeSpan) },
+          { scope: { name: "rolesignal" }, spans: encodeEach(spans, encodeSpan) },
         ],
       },
     ],
@@ -177,7 +177,7 @@ export function buildLogPayload(records: QueuedLog[]) {
         resource: resource(),
         scopeLogs: [
           {
-            scope: { name: "jobsync" },
+            scope: { name: "rolesignal" },
             logRecords: encodeEach(records, encodeLog),
           },
         ],

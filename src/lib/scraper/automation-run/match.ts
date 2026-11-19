@@ -72,8 +72,8 @@ ${removeHtmlTags(job.description)}
           resumeChars: resumeText.length,
           jobChars: jobText.length,
         }),
-        "jobsync.job_board": sourceBoard,
-        "jobsync.user_id": userId,
+        "rolesignal.job_board": sourceBoard,
+        "rolesignal.user_id": userId,
       },
       async (span) => {
         // No numCtx: this call passes none, so Ollama uses its daemon default.

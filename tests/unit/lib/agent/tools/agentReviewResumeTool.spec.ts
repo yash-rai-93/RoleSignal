@@ -188,7 +188,7 @@ describe("review_resume agent tool", () => {
     rejected.catch(() => {});
     streamText.mockReturnValue({
       textStream: (async function* () {
-        yield "SCORES: overall=78 impact=72 clarity=81 ats=69\n\n## Summary\nKhuram presents an";
+        yield "SCORES: overall=78 impact=72 clarity=81 ats=69\n\n## Summary\nYash presents an";
       })(),
       finishReason: rejected,
     });

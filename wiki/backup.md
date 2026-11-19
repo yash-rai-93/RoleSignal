@@ -1,10 +1,10 @@
 ---
 type: how-to
 title: Data Backup
-description: Exporting everything on your account as one zip, importing it back on any JobSync instance, what a backup leaves out, and undoing an import.
+description: Exporting everything on your account as one zip, importing it back on any RoleSignal instance, what a backup leaves out, and undoing an import.
 feature: backup
 tags: [backup, restore, export, import, data, zip, snapshot, undo import, rollback, migrate, settings data]
-aliases: [export my data, import my data, back up jobsync, restore from backup, move to a new server, undo import]
+aliases: [export my data, import my data, back up rolesignal, restore from backup, move to a new server, undo import]
 status: stable
 stale_after: 2027-10-10
 ---
@@ -25,11 +25,11 @@ No — it covers one account's data and leaves out accounts, API keys and MCP to
 
 ## How do I restore a backup?
 
-Under **Settings → Data**, choose the zip in **Import a backup**. JobSync reads it and shows when it was exported, which JobSync version and account it came from, and how many of each record it holds. Click **Replace my data with this backup** to confirm.
+Under **Settings → Data**, choose the zip in **Import a backup**. RoleSignal reads it and shows when it was exported, which RoleSignal version and account it came from, and how many of each record it holds. Click **Replace my data with this backup** to confirm.
 
 An import replaces everything on the account you are signed in to. Your API keys and MCP tokens are left alone, and the agent chat history is cleared. If the backup came from a different account, a red warning says so, and the import still wipes the account you are signed in to.
 
-## How do I move JobSync to a new server?
+## How do I move RoleSignal to a new server?
 
 Download a backup on the old instance, sign in to the new one, and import the zip under **Settings → Data**. Set your API keys again on the new instance, since a backup never carries them.
 

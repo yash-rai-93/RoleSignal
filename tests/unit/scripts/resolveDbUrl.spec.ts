@@ -1,7 +1,7 @@
 import { resolveDatabaseUrl } from "../../../scripts/wait/resolve";
 
-const BUNDLED = "postgres://jobsync:b3und!ed@db:5432/jobsync";
-const EXTERNAL = "postgres://me:pw@192.168.0.162:5432/jobsync";
+const BUNDLED = "postgres://rolesignal:b3und!ed@db:5432/rolesignal";
+const EXTERNAL = "postgres://me:pw@192.168.0.162:5432/rolesignal";
 
 describe("resolveDatabaseUrl", () => {
   it("keeps the url as found when BUNDLED_DATABASE_URL is absent", () => {

@@ -43,7 +43,7 @@ describe("isResumeFilePath", () => {
   });
 
   it("follows a runtime UPLOADS_DIR override", () => {
-    const tmp = path.join(os.tmpdir(), "jobsync-override");
+    const tmp = path.join(os.tmpdir(), "rolesignal-override");
     setUploadsDir(tmp);
 
     expect(isResumeFilePath(path.join(tmp, "files", "resumes", "cv.pdf"))).toBe(
@@ -59,7 +59,7 @@ describe("saveResumeUpload / removeResumeFile", () => {
   let tmp: string;
 
   beforeEach(() => {
-    tmp = fs.mkdtempSync(path.join(os.tmpdir(), "jobsync-resumes-"));
+    tmp = fs.mkdtempSync(path.join(os.tmpdir(), "rolesignal-resumes-"));
     setUploadsDir(tmp);
   });
 

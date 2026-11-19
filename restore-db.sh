@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# JobSync database restore
+# RoleSignal database restore
 # Usage: ./restore-db.sh <backup-file.sql.gz>
 # Loads a backup-db.sh dump into an EMPTY database. Refuses one with data.
 
@@ -11,7 +11,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 FILE="${1:-}"
 if [ -z "$FILE" ] || [ ! -f "$FILE" ]; then
     echo "Usage: ./restore-db.sh <backup-file.sql.gz>"
-    echo "Backups are in jobsyncdb/data/backups/"
+    echo "Backups are in rolesignaldb/data/backups/"
     exit 1
 fi
 FILE="$( cd "$( dirname "$FILE" )" && pwd )/$( basename "$FILE" )"
@@ -67,7 +67,7 @@ libpq_url() {
 }
 
 # The reset below drops public, which would hit another app's tables when
-# JobSync lives in its own schema of a shared database
+# RoleSignal lives in its own schema of a shared database
 SCHEMA="$(printf '%s' "$DATABASE_URL" | sed -nE 's/.*[?&]schema=([^&]*).*/\1/p')"
 if [ -n "$SCHEMA" ] && [ "$SCHEMA" != "public" ]; then
     echo "DATABASE_URL sets ?schema=$SCHEMA. Restore supports only the public schema."
@@ -86,7 +86,7 @@ else
         echo "BUNDLED_DB=0 is set in .env but DATABASE_URL does not point at your own Postgres: there is no database to restore into."
         exit 1
     fi
-    run_psql() { $COMPOSE_CMD exec -T db psql -v ON_ERROR_STOP=1 -U jobsync -d jobsync "$@"; }
+    run_psql() { $COMPOSE_CMD exec -T db psql -v ON_ERROR_STOP=1 -U rolesignal -d rolesignal "$@"; }
 fi
 
 if ! HAS_TABLE="$(echo "SELECT count(*) FROM pg_tables WHERE schemaname = 'public' AND tablename = 'User';" | run_psql -tA)"; then

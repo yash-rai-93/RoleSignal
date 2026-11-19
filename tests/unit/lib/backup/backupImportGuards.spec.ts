@@ -148,7 +148,7 @@ describe("importBackup guards", () => {
 
   it("never unlinks a replaced file outside the resumes directory", async () => {
     const originalUploads = APP_CONSTANTS.UPLOADS_DIR;
-    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "jobsync-cleanup-"));
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "rolesignal-cleanup-"));
     (APP_CONSTANTS as { UPLOADS_DIR: string }).UPLOADS_DIR = tmp;
     try {
       const inside = path.join(tmp, "files", "resumes", "old.pdf");

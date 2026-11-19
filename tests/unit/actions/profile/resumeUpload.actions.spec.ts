@@ -51,7 +51,7 @@ const writeResumeFile = (name: string, content: string) => {
 };
 
 beforeEach(() => {
-  tmp = fs.mkdtempSync(path.join(os.tmpdir(), "jobsync-upload-"));
+  tmp = fs.mkdtempSync(path.join(os.tmpdir(), "rolesignal-upload-"));
   resumes = path.join(tmp, "files", "resumes");
   fs.mkdirSync(resumes, { recursive: true });
   (APP_CONSTANTS as { UPLOADS_DIR: string }).UPLOADS_DIR = tmp;

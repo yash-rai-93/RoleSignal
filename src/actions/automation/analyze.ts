@@ -108,8 +108,8 @@ export async function analyzeDiscoveredJob(jobId: string): Promise<{
           resumeChars: resumePre.data.normalizedText.length,
           jobChars: jobPre.data.normalizedText.length,
         }),
-        "jobsync.user_id": user.id,
-        "jobsync.job_id": jobId,
+        "rolesignal.user_id": user.id,
+        "rolesignal.job_id": jobId,
       },
       async (span) => {
         // The Analyze button on a discovered job counts as Automations.

@@ -1,10 +1,10 @@
 ---
 type: tutorial
 title: Getting Started
-description: The first run through JobSync — creating an account, connecting an AI provider, adding a job, and what each sidebar area is for.
+description: The first run through RoleSignal — creating an account, connecting an AI provider, adding a job, and what each sidebar area is for.
 feature: setup
 tags: [setup, first run, sign in, account, ai provider, ollama, sidebar, navigation, dashboard, quick add, shortcuts, ai usage, tokens, goals, daily goals, calendar]
-aliases: [new user, onboarding, first steps, how do I start, set up jobsync, how much ai am i using]
+aliases: [new user, onboarding, first steps, how do I start, set up rolesignal, how much ai am i using]
 status: stable
 stale_after: 2027-08-31
 ---
@@ -13,15 +13,15 @@ stale_after: 2027-08-31
 
 ## How do I create an account and sign in?
 
-Open the app and choose **Create Account** on the sign-in page, or go straight to `/signup`. JobSync accounts are local to your installation — there is no external identity provider and no email verification step, so the account you create is immediately usable. After signing up you land on the Dashboard at `/dashboard`. To sign in later, use `/signin` with the same email and password.
+Open the app and choose **Create Account** on the sign-in page, or go straight to `/signup`. RoleSignal accounts are local to your installation — there is no external identity provider and no email verification step, so the account you create is immediately usable. After signing up you land on the Dashboard at `/dashboard`. To sign in later, use `/signin` with the same email and password.
 
 ## How do I connect an AI provider?
 
-Open the avatar menu at the bottom of the left sidebar and choose **Settings**, then **AI Provider**. Pick a provider, then a model. JobSync supports Ollama, OpenAI, DeepSeek, Gemini and OpenRouter. Ollama runs models on your own machine and needs no key; the other four are hosted and need an API key, which you add under **Settings → API Keys** in that same menu. Keys are encrypted before they are stored.
+Open the avatar menu at the bottom of the left sidebar and choose **Settings**, then **AI Provider**. Pick a provider, then a model. RoleSignal supports Ollama, OpenAI, DeepSeek, Gemini and OpenRouter. Ollama runs models on your own machine and needs no key; the other four are hosted and need an API key, which you add under **Settings → API Keys** in that same menu. Keys are encrypted before they are stored.
 
-If you run Ollama somewhere other than the default address, add that address under **Settings → API Keys** as the Ollama Base URL. Leaving it unset is fine and is the normal case — JobSync then uses the server default shown on that card. If you have saved one and want to go back to the default, use **Reset to default** on the Ollama card. The connection check on that page only runs by itself when Ollama is your selected provider; the refresh button next to it checks on demand whatever you have selected.
+If you run Ollama somewhere other than the default address, add that address under **Settings → API Keys** as the Ollama Base URL. Leaving it unset is fine and is the normal case — RoleSignal then uses the server default shown on that card. If you have saved one and want to go back to the default, use **Reset to default** on the Ollama card. The connection check on that page only runs by itself when Ollama is your selected provider; the refresh button next to it checks on demand whatever you have selected.
 
-Nothing AI-powered works until a provider *and* a model are both set — resume review, job matching, cover letters and the chat panel all refuse to start rather than silently picking a model for you. If you selected Ollama and the model list is empty, JobSync could not reach the Ollama server; check that it is running and reachable from wherever JobSync is running.
+Nothing AI-powered works until a provider *and* a model are both set — resume review, job matching, cover letters and the chat panel all refuse to start rather than silently picking a model for you. If you selected Ollama and the model list is empty, RoleSignal could not reach the Ollama server; check that it is running and reachable from wherever RoleSignal is running.
 
 ## How do I see how much AI I'm using?
 
@@ -65,4 +65,4 @@ Click the ⚙ button (Set goals) at the bottom right of the Daily Goals calendar
 
 ## Where do I find installation and Docker instructions?
 
-They are in the [project README](https://github.com/Gsync/jobsync#readme), not here. That covers running JobSync with Docker, the environment variables it reads, and how to upgrade an existing installation. These wiki pages assume you already have a running instance and cover using it.
+They are in the [project README](https://github.com/yash-rai-93/RoleSignal#readme), not here. That covers running RoleSignal with Docker, the environment variables it reads, and how to upgrade an existing installation. These wiki pages assume you already have a running instance and cover using it.

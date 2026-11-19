@@ -8,9 +8,9 @@ pipeline {
     }
 
     environment {
-        APP_DIR = credentials('jobsync-app-dir')
-        IMAGE = credentials('jobsync-image')
-        NPM_CACHE_DIR = credentials('jobsync-npm-cache-dir')
+        APP_DIR = credentials('rolesignal-app-dir')
+        IMAGE = credentials('rolesignal-image')
+        NPM_CACHE_DIR = credentials('rolesignal-npm-cache-dir')
         BRANCH = 'dev'
         CI_CONTAINER = "ci-${BUILD_NUMBER}"
     }

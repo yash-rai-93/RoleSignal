@@ -133,7 +133,7 @@ export function ProfileDropdown({
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
             <a
-              href="https://github.com/Gsync/jobsync/wiki"
+              href="https://github.com/yash-rai-93/RoleSignal/tree/main/wiki"
               target="_blank"
               rel="noopener noreferrer"
               className="cursor-pointer"

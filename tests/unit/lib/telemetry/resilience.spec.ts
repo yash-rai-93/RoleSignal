@@ -27,7 +27,7 @@ describe("telemetry never breaks a request", () => {
     const { span } = await loadTelemetry({ endpoint: ENDPOINT });
 
     const hostile = {
-      get "jobsync.surface"() {
+      get "rolesignal.surface"() {
         throw new TypeError("no");
       },
     };
@@ -45,7 +45,7 @@ describe("telemetry never breaks a request", () => {
 
     const circular: Record<string, unknown> = {};
     circular.self = circular;
-    span.startSpan("bad").end({ "jobsync.payload": circular });
+    span.startSpan("bad").end({ "rolesignal.payload": circular });
     span.startSpan("good").end();
 
     await vi.advanceTimersByTimeAsync(APP_CONSTANTS.TELEMETRY_FLUSH_INTERVAL_MS);

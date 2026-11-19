@@ -67,7 +67,7 @@ describe("rewriteWikiLinks", () => {
   });
 
   it("leaves external links alone", () => {
-    const raw = "[repo](https://github.com/Gsync/jobsync) and [d](http://x.dev/a.md)";
+    const raw = "[repo](https://github.com/yash-rai-93/RoleSignal) and [d](http://x.dev/a.md)";
     expect(rewriteWikiLinks(raw)).toBe(raw);
   });
 
@@ -84,13 +84,13 @@ describe("rewriteWikiLinks", () => {
 
 describe("buildSidebar", () => {
   it("lists Home first, then every linked page in index order", () => {
-    const body = `# JobSync Help
+    const body = `# RoleSignal Help
 
 - [Getting Started](Getting-Started) — first run.
 - [Jobs](Jobs) — track applications.
 `;
     expect(buildSidebar(body)).toBe(
-      `### JobSync Help
+      `### RoleSignal Help
 
 - [Home](Home)
 - [Getting Started](Getting-Started)
@@ -101,6 +101,6 @@ describe("buildSidebar", () => {
 
   it("ignores prose lines and inline links outside the list", () => {
     const body = "Intro with a [link](Jobs).\n\n- [Jobs](Jobs) — track.\n";
-    expect(buildSidebar(body)).toBe("### JobSync Help\n\n- [Home](Home)\n- [Jobs](Jobs)\n");
+    expect(buildSidebar(body)).toBe("### RoleSignal Help\n\n- [Home](Home)\n- [Jobs](Jobs)\n");
   });
 });

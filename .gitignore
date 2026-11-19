@@ -51,7 +51,7 @@ next-env.d.ts
 
 # local user data: uploaded resumes and the docker bind mount
 /data/
-/jobsyncdb/
+/rolesignaldb/
 
 # generated: the Prisma client and the compiled boot scripts
 /src/generated/

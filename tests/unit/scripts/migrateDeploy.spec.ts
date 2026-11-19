@@ -3,7 +3,7 @@ import { migrateDeploy } from "../../../scripts/migrate/run";
 
 const INIT: MigrationFile = { name: "00000000000000_init_postgres", sql: "CREATE TABLE a (id int);\nCREATE TABLE b (id int);" };
 const NEXT: MigrationFile = { name: "20261201000000_next", sql: "ALTER TABLE a ADD c int;" };
-const URL = "postgres://jobsync:hunter2@db:5432/jobsync";
+const URL = "postgres://rolesignal:hunter2@db:5432/rolesignal";
 const done = (name: string): RecordedRow => ({ migration_name: name, finished_at: new Date(), rolled_back_at: null });
 
 interface FakeOptions {
@@ -23,7 +23,7 @@ function fakeClient({ rows = [], schemas = ["public"], failOn, lockTimeout }: Fa
         throw Object.assign(new Error("canceling statement due to lock timeout"), { code: "55P03" });
       }
       if (failOn && text.includes(failOn)) {
-        throw new Error(`syntax error at BROKEN in postgres://jobsync:hunter2@db/jobsync`);
+        throw new Error(`syntax error at BROKEN in postgres://rolesignal:hunter2@db/rolesignal`);
       }
       if (text.startsWith("SELECT migration_name")) return { rows };
       if (text.includes("pg_namespace")) {

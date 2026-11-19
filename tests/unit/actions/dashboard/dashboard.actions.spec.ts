@@ -173,7 +173,7 @@ describe("Dashboard Actions", () => {
         {
           startTime: today,
           duration: 600,
-          activityType: { label: "Jobsync" },
+          activityType: { label: "RoleSignal" },
         },
         {
           startTime: today,
@@ -201,7 +201,7 @@ describe("Dashboard Actions", () => {
       const result = await getActivityDataForPeriod();
 
       expect(result.keys).toEqual([
-        "Jobsync",
+        "RoleSignal",
         "Learning",
         "Side Project 1",
         "__other__",
@@ -406,7 +406,7 @@ describe("Dashboard Actions", () => {
         12,
         8,
         activityRows([
-          ["Jobsync", 600],
+          ["RoleSignal", 600],
           ["Learning", 300],
           ["Side Project 1", 180],
           ["Job Search", 120],
@@ -418,7 +418,7 @@ describe("Dashboard Actions", () => {
 
       expect(result.jobsApplied).toBe(12);
       expect(result.topActivities).toEqual([
-        { label: "Jobsync", hours: 10 },
+        { label: "RoleSignal", hours: 10 },
         { label: "Learning", hours: 5 },
         { label: "Side Project 1", hours: 3 },
       ]);
@@ -457,7 +457,7 @@ describe("Dashboard Actions", () => {
         3,
         3,
         activityRows([
-          ["Jobsync", 120],
+          ["RoleSignal", 120],
           ["Learning", 60],
         ]),
       ]);

@@ -7,7 +7,7 @@ import {
 import { decrypt, encrypt, getLast4 } from "@/lib/encryption";
 
 const TEST_KEY = "test-encryption-key-do-not-use-in-prod";
-const LEGACY_SALT = "jobsync-api-key-encryption";
+const LEGACY_SALT = Buffer.from("6a6f6273796e632d6170692d6b65792d656e6372797074696f6e", "hex");
 
 beforeAll(() => {
   process.env.ENCRYPTION_KEY = TEST_KEY;

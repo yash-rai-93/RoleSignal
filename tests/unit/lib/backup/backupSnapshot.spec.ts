@@ -52,7 +52,7 @@ describe("pruneSnapshots", () => {
   const stamped = (n: number) => `pre-import-2026-08-14T10-0${n}-00-000Z.zip`;
 
   beforeEach(() => {
-    const root = fsSync.mkdtempSync(path.join(os.tmpdir(), "jobsync-snap-"));
+    const root = fsSync.mkdtempSync(path.join(os.tmpdir(), "rolesignal-snap-"));
     (APP_CONSTANTS as { UPLOADS_DIR: string }).UPLOADS_DIR = root;
     // Kept tiny so the byte-budget tests don't write real 100s-of-MB
     // files to disk — the boundary logic is the same at any scale.

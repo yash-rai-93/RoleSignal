@@ -1,6 +1,6 @@
 // Stage order is the Library -> Stages order (JobStageType.sortOrder), not
 // chronology: a job is routinely added days after it was applied to, so the
-// New stage's date (when the job entered JobSync) postdates the Applied
+// New stage's date (when the job entered RoleSignal) postdates the Applied
 // stage's. Dates break ties within one sortOrder. Undated stages sort last
 // among their peers. This ordering predates Postgres and stays in JavaScript
 // so the Timeline tab can share it.

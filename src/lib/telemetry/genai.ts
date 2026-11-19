@@ -35,7 +35,7 @@ export function genAiRequestAttrs(input: {
   const attrs: Attrs = {
     "gen_ai.system": input.provider,
     "gen_ai.request.model": input.model,
-    "jobsync.surface": input.surface,
+    "rolesignal.surface": input.surface,
   };
   if (input.temperature !== undefined) {
     attrs["gen_ai.request.temperature"] = input.temperature;
@@ -44,7 +44,7 @@ export function genAiRequestAttrs(input: {
   // the oldest context on overflow with no error and no distinct finish
   // reason, so the pair is the only way overflow is visible at all.
   if (input.numCtx !== undefined) {
-    attrs["jobsync.ollama.num_ctx"] = input.numCtx;
+    attrs["rolesignal.ollama.num_ctx"] = input.numCtx;
   }
   if (CAPTURE_CONTENT && (input.system !== undefined || input.prompt !== undefined)) {
     attrs["gen_ai.prompt"] = { system: input.system, prompt: input.prompt };
@@ -90,13 +90,13 @@ export function inputSizeAttrs(input: {
 }): Attrs {
   const attrs: Attrs = {};
   if (input.resumeChars !== undefined) {
-    attrs["jobsync.input.resume_chars"] = input.resumeChars;
+    attrs["rolesignal.input.resume_chars"] = input.resumeChars;
   }
   if (input.jobChars !== undefined) {
-    attrs["jobsync.input.job_chars"] = input.jobChars;
+    attrs["rolesignal.input.job_chars"] = input.jobChars;
   }
   if (input.truncated !== undefined) {
-    attrs["jobsync.input.truncated"] = input.truncated;
+    attrs["rolesignal.input.truncated"] = input.truncated;
   }
   return attrs;
 }

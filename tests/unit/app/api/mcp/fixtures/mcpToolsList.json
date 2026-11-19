@@ -1,7 +1,7 @@
 [
   {
     "name": "add_job",
-    "description": "Add a job application to JobSync. Resolves or creates company, job title, location, and source by name. Returns a transparency report of what was matched vs. created.",
+    "description": "Add a job application to RoleSignal. Resolves or creates company, job title, location, and source by name. Returns a transparency report of what was matched vs. created.",
     "inputSchema": {
       "$schema": "http://json-schema.org/draft-07/schema#",
       "type": "object",
@@ -109,7 +109,7 @@
   },
   {
     "name": "find_job",
-    "description": "Look up whether a job posting is already saved in JobSync, by URL. Call this before add_job when re-running a search. With no URL to look up, use add_job's upsert instead of skipping dedupe.",
+    "description": "Look up whether a job posting is already saved in RoleSignal, by URL. Call this before add_job when re-running a search. With no URL to look up, use add_job's upsert instead of skipping dedupe.",
     "inputSchema": {
       "$schema": "http://json-schema.org/draft-07/schema#",
       "type": "object",

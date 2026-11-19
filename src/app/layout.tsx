@@ -15,10 +15,12 @@ const inter = localFont({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | JobSync",
-    default: "JobSync",
+    template: "%s | RoleSignal",
+    default: "RoleSignal",
   },
   description: "Job Application Tracking System",
+  authors: [{ name: "yash-rai-93", url: "https://github.com/yash-rai-93" }],
+  creator: "yash-rai-93",
 };
 
 interface Props {

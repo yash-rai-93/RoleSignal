@@ -1,4 +1,4 @@
-# JobSync Deployment Script (Windows / PowerShell)
+# RoleSignal Deployment Script (Windows / PowerShell)
 # Usage: .\deploy.ps1 [branch-name]
 # Example: .\deploy.ps1 main
 # Example: .\deploy.ps1 develop
@@ -21,7 +21,7 @@ function Assert-LastExit($msg) {
 }
 
 Write-Host "========================================" -ForegroundColor Yellow
-Write-Host "JobSync Deployment Script" -ForegroundColor Yellow
+Write-Host "RoleSignal Deployment Script" -ForegroundColor Yellow
 Write-Host "========================================" -ForegroundColor Yellow
 Write-Host ""
 
@@ -80,9 +80,9 @@ Write-Host "[4/5] Stopping existing containers..." -ForegroundColor Green
 Compose down
 Assert-LastExit "docker compose down failed"
 
-Write-Host "[5/5] Pulling latest images and starting containers..." -ForegroundColor Green
-Compose pull
-Assert-LastExit "docker compose pull failed"
+Write-Host "[5/5] Building RoleSignal and starting containers..." -ForegroundColor Green
+Compose build app
+Assert-LastExit "docker compose build failed"
 Compose up -d --force-recreate
 Assert-LastExit "docker compose up failed"
 

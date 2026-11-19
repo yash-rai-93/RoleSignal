@@ -14,7 +14,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: gsync/jobsync
+  IMAGE_NAME: yash-rai-93/rolesignal
 
 permissions:
   contents: read

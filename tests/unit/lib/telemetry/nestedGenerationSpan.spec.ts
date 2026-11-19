@@ -53,7 +53,7 @@ describe("agent.nested span", () => {
       provider: "ollama",
       modelName: "qwen3.5:9b",
       userId: "user-1",
-      attrs: { "jobsync.input.resume_chars": 14500 },
+      attrs: { "rolesignal.input.resume_chars": 14500 },
     });
 
     expect(result).toEqual({ status: "ok", text: "ab" });

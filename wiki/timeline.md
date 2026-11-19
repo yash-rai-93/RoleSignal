@@ -47,7 +47,7 @@ Marking a job *Applied* or *Interview* this way also sets its **Applied** flag, 
 
 Stages are laid out in the order **Library → Stages** gives their types, not by date, so a job you added weeks after applying to it still reads New then Applied. Dates decide the order only between stages of the same type — two interview rounds of the same kind, say.
 
-So a job added long after you applied can show its New stage dated after its Applied stage — the New date records when it entered JobSync.
+So a job added long after you applied can show its New stage dated after its Applied stage — the New date records when it entered RoleSignal.
 
 ## Why does a stage show a dash instead of a date?
 
